@@ -1,0 +1,14 @@
+@use "../use" as *;
+@use "../element/list" as *;
+
+.sitemap {
+	&__list {
+		@include list--reset;
+		@include list--flex;
+		justify-content: center;
+		padding: $u;
+		li {
+			font-size: $fs0;
+		}
+	}
+}

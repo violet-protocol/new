@@ -1,0 +1,36 @@
+@use "../use" as *;
+
+$steps: 6;
+
+// TEXT ##
+.text {
+	margin: $u * 2 0;
+}
+
+@mixin text-column {
+	$gap: $u;
+	$divi: 3;
+	column-gap: $gap;
+	column-fill: balance;
+	column-width: div($line-width, $divi);
+	max-width: calc($line-width * $divi + $gap * $divi - $gap);
+	//	column-rule: 1px dashed $body-color;
+}
+
+[class*="text-column"] {
+	@include text-column;
+}
+
+@for $n from 1 through $steps {
+	.text-column#{$n} {
+		@include text-column;
+	}
+}
+
+@include mq(medium) {
+	@for $n from 1 through $steps {
+		.text-column--#{$n} {
+			column-count: #{$n};
+		}
+	}
+}

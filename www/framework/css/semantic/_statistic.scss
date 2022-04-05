@@ -1,0 +1,31 @@
+@use "../use" as *;
+@use "../element/list" as *;
+
+.statistic {
+	@include grid;
+	grid-template-areas:
+		"heading"
+		"list"
+		"intro";
+	// @include mq(large) {
+	// 	grid-template-areas:
+	// 		"heading heading"
+	// 		"list intro";
+	// 	grid-template-columns: auto 1fr;
+	// }
+
+	&__list {
+		grid-area: list;
+		@include list--reset;
+		@include flex;
+		--flex-gap: #{$u * 2};
+		padding-inline: $u;
+	}
+	&__intro {
+		grid-area: intro;
+		font-size: $fs-2;
+	}
+	.number {
+		font-size: calc(#{$fs6} * 2);
+	}
+}

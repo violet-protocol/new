@@ -1,0 +1,16 @@
+mixin listing(countItems=12, filter=0, paging=0, modifier='', heading='')
+	section.listing
+		if heading
+			h1.listing__heading.has-pattern!= heading
+		if filter
+			+filter('listing') 
+
+		ol(class!= 'listing__list' + modifier data-mod4!= countItems % 4 data-mod3!= countItems % 3 data-mod2!= countItems % 2) 
+			- var i = 0;
+			while i < countItems
+				li(class='listing__item') 
+					+udo('--listing','Wie gut kennst du die Horror-Reihe mit Michael Myers?','Mittel',['Halloween','Film', 'Horror', 'TV'],'', 'Online Quiz zu Halloween')
+
+				- i++
+		if paging
+			+paging('','Zurück','Mehr','listing','listing')

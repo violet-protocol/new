@@ -1,0 +1,93 @@
+mixin udo(context, heading, difficulty, tag, src) 
+	div(class!='udo'+context)
+		a.udo__inner(href="game.html" title=heading)
+			if src
+				+figure("has-pattern udo",src, "", "unsplash") 
+			else
+				+figure("has-pattern udo","../image/test/" + Math.floor(Math.random() * 5) + ".jpg", "", "unsplash")
+			if heading
+				h3.udo__heading
+					if tag 
+						span.udo__kicker Online-Quiz:
+							|
+							|
+							|
+							strong!=tag[0]
+					!= heading 
+			else 
+				h3.udo__heading
+					+text-gen(Math.floor(Math.random() * (20 - 60)+60), "c")
+			p.udo__excerpt 
+				+text-gen(Math.floor(Math.random() * (60 - 180)+180), "c", true)
+		if tag
+			ul.udo__tag
+				li.difficulty--1
+					a(href="difficulty.html" title="Ähnliche")
+						span!=difficulty 
+
+				each val in tag
+					li
+						a(href="tag.html" title="Ähnliche")
+							span!=val 
+
+
+mixin udo--children(context, kicker, heading, time, author, tag, src)
+	article.udo
+		a.udo__inner(href="prototype__" + context +".html" title=heading)
+			figure.udo__figure
+				if src
+					img(src=src alt=heading)
+				else
+					img(src="http://picsum.photos/500?random=" alt=heading)
+
+			.udo__copy
+				if time
+					time.udo__time!=time
+				span.kicker!= kicker
+				h2.udo__heading!= heading
+		.udo__children
+			ol.list--columns
+				li
+					a(href="prototype__post.html")
+						span.kicker kicker
+						| Headline
+				li
+					a(href="prototype__post.html")
+						span.kicker kicker
+						| Headline
+				li
+					a(href="prototype__post.html")
+						span.kicker kicker
+						| Headline
+				li
+					a(href="prototype__post.html")
+						span.kicker kicker
+						| Headline
+				li
+					a(href="prototype__post.html")
+						span.kicker kicker
+						| Headline
+				li
+					a(href="prototype__post.html")
+						span.kicker kicker
+						| Headline
+
+
+mixin udo--showcase(context, kicker, heading, time, author, tag, src)
+	article.udo
+		a.udo__inner(href="prototype__" + context +".html" title=heading)
+			figure.udo__figure
+				if src
+					img(src=src alt=heading)
+				else
+					img(src="//picsum.photos/500?random=" + i alt=heading)
+			.udo__copy
+				if time
+					time.udo__time!=time
+				if kicker
+					span.udo__kicker!= kicker
+				h2.udo__heading!= heading
+				if author
+					.udo__author
+						img(src="//picsum.photos/id/1027/200" alt=author)
+						!= author

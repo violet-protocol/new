@@ -1,0 +1,10 @@
+@use "../use" as *;
+
+[class^="ad--"] {
+	height: calc(#{var(--adHeight)});
+	margin: auto;
+	background-color: $neutral-color;
+}
+[class*="ad--mobile"] {
+	width: 320px;
+}

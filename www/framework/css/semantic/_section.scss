@@ -1,0 +1,22 @@
+@use "../use" as *;
+.section {
+	scroll-snap-align: start;
+	max-width: $line-width;
+	background-color: $black;
+	margin: (5vh * $f--12) (1vw * $f--12) (2vh * $f--12);
+	&:first-of-type {
+		margin-block-start: 100vh;
+	}
+	@include mq(medium) {
+		margin-inline: (2vw * $f--12);
+	}
+	@include mq(large) {
+		margin-inline-start: (5vw * $f--12);
+		margin-inline-end: (1vw * $f--12);
+	}
+	padding: $u;
+}
+
+[class^="section--"] {
+	@extend .section;
+}

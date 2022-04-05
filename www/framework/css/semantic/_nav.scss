@@ -1,0 +1,68 @@
+@use "../use" as *;
+@use "../element/index" as *;
+
+@mixin nav__item {
+	max-width: none;
+	font-family: $font-family-nav;
+	a:link,
+	a:visited {
+		color: $link-color;
+		@include normal--inverse;
+	}
+
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+
+	a:active {
+		color: $link-color-active;
+	}
+
+	&.is-current a {
+		background-color: $brand--color;
+	}
+	a {
+		padding: 0.5ch 1ch;
+	}
+}
+
+[class*="nav__list"] {
+	@include list--reset;
+	@include flex;
+	--flex-gap: #{$u2};
+	text-align: end;
+	flex-flow: column nowrap;
+	> * {
+	}
+}
+
+[class*="nav__item"] {
+	@include nav__item;
+	//	@include uppercase;
+}
+
+.nav {
+	&--main {
+		font-size: $fs3;
+		padding: $u;
+		.nav__item {
+			pointer-events: none;
+		}
+	}
+	&--entry {
+		background-color: $brand--dark;
+		padding: $u;
+		.nav__list {
+			flex-flow: row wrap;
+			justify-content: center;
+		}
+	}
+	&--collateral {
+		.nav__list {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
+	}
+}
