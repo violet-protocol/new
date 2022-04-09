@@ -1,8 +1,9 @@
 @use "../use" as *;
 .section {
 	scroll-snap-align: start;
+	mix-blend-mode: difference;
 	max-inline-size: $line-width;
-	background-color: $black;
+	//background-color: $pitch;
 	margin: (5vh * $f--12) (1vw * $f--12) (2vh * $f--12);
 	padding: $u;
 	@include mq(medium) {

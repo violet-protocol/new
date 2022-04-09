@@ -20,6 +20,8 @@
 		font-size: $fs0;
 	}
 	&-header {
+		mix-blend-mode: difference;
+
 		display: flex;
 		align-items: flex-start;
 		position: fixed;
@@ -36,7 +38,11 @@
 	}
 	&-brand {
 		&__logo {
-			opacity: 0.8;
+			//	opacity: 0.8;
+
+			.logogram {
+			}
+
 			transform: rotate(-0.25turn) translateY(-18vw);
 			@include mq(medium) {
 				transform: rotate(0turn) translateY(0);
@@ -50,10 +56,12 @@
 			&:hover {
 				opacity: 1;
 			}
+			use {
+			}
 			svg {
 				@include transition;
 				transition-property: inline-size block-size;
-				@extend %svgshadow;
+				//	@extend %svgshadow;
 				color: $white;
 				inline-size: div(100vw, 6);
 				block-size: $u * 6;
