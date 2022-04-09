@@ -2,8 +2,12 @@
 @use "../element/list" as *;
 
 .article {
-	//	display: grid;
-	//	grid-template-areas:
-	//	'. .'
-	//	'';
+	@include mq(large) {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+}
+
+[class^="article--"] {
+	@extend .article;
 }

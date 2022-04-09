@@ -12,13 +12,6 @@
 			flex: 0 0 auto;
 		}
 	}
-	&__monetize {
-		inline-size: 100%;
-		max-inline-size: $site-inline-size;
-		margin: auto;
-		height: calc(#{var(--adHeight)});
-		background-color: $brand--dark;
-	}
 	&__inner {
 		position: relative;
 		max-inline-size: $site-inline-size;
@@ -77,7 +70,7 @@
 	&-main {
 		max-inline-size: $site-inline-size;
 		margin: auto;
-		min-height: 100vh;
+		//	min-height: 100vh;
 	}
 	&-menu {
 		inline-size: 100%;
@@ -85,8 +78,9 @@
 	&-footer {
 		margin: auto;
 		padding: $u;
-		position: sticky;
+		position: fixed;
 		inset-block-end: 0;
+		inset-inline: 0;
 		background-color: $brand--mute;
 		@include normal--inverse;
 		font-size: $fs-3;

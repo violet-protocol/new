@@ -2907,13 +2907,6 @@ figure figcaption cite {
 .page__outer > * {
   flex: 0 0 auto;
 }
-.page__monetize {
-  inline-size: 100%;
-  max-inline-size: 2881.5px;
-  margin: auto;
-  height: calc(var(--adHeight));
-  background-color: var(--brand--dark);
-}
 .page__inner {
   position: relative;
   max-inline-size: 2881.5px;
@@ -2980,7 +2973,6 @@ figure figcaption cite {
 .page-main {
   max-inline-size: 2881.5px;
   margin: auto;
-  min-height: 100vh;
 }
 .page-menu {
   inline-size: 100%;
@@ -2988,8 +2980,9 @@ figure figcaption cite {
 .page-footer {
   margin: auto;
   padding: 1rem;
-  position: sticky;
+  position: fixed;
   inset-block-end: 0;
+  inset-inline: 0;
   background-color: var(--brand--mute);
   --weight: 350;
   --webkit-font-smoothing: antialiased;
@@ -3209,15 +3202,19 @@ figure figcaption cite {
   object-fit: cover;
 }
 
+@media (min-width: 1200px) and (min-height: 0px) {
+  .article, [class^=article--] {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
 .section, [class^=section--] {
   scroll-snap-align: start;
-  max-width: 55ch;
+  max-inline-size: 55ch;
   background-color: black;
   margin: 41.6666666667vh 8.3333333333vw 16.6666666667vh;
   padding: 1rem;
-}
-.section:first-of-type, [class^=section--]:first-of-type {
-  margin-block-start: 100vh;
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .section, [class^=section--] {
@@ -3226,8 +3223,19 @@ figure figcaption cite {
 }
 @media (min-width: 1200px) and (min-height: 0px) {
   .section, [class^=section--] {
-    margin-inline-start: 41.6666666667vw;
-    margin-inline-end: 8.3333333333vw;
+    max-block-size: 50vh;
+    min-inline-size: 55ch;
+    margin-block-start: 50vh;
+    margin-inline: 8.3333333333vw;
+    overflow: auto;
+  }
+}
+.section:first-of-type, [class^=section--]:first-of-type {
+  margin-block-start: 100vh;
+}
+@media (min-width: 1200px) and (min-height: 0px) {
+  .section:first-of-type, [class^=section--]:first-of-type {
+    margin-block-start: 50vh;
   }
 }
 
