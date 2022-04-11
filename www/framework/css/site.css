@@ -3226,7 +3226,7 @@ figure figcaption cite {
     max-block-size: 50vh;
     margin-block-start: 50vh;
     min-inline-size: 100vw;
-    padding-inline: 8.3333333333vw;
+    padding-inline: calc((1vw * 8.3333333333) + 1rem);
     overflow: auto;
   }
 }
