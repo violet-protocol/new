@@ -50,12 +50,13 @@
 			pointer-events: none;
 		}
 	}
-	&--entry {
-		background-color: $brand--dark;
-		padding: $u;
+	&--document {
+		position: fixed;
+		z-index: z(fixed);
+		inset-block-start: $u;
+		inset-inline-end: $u;
 		.nav__list {
 			flex-flow: row wrap;
-			justify-content: center;
 		}
 	}
 	&--collateral {

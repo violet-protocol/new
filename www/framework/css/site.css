@@ -3174,13 +3174,14 @@ figure figcaption cite {
 .nav--main .nav__item {
   pointer-events: none;
 }
-.nav--entry {
-  background-color: var(--brand--dark);
-  padding: 1rem;
+.nav--document {
+  position: fixed;
+  z-index: 1400;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
 }
-.nav--entry .nav__list {
+.nav--document .nav__list {
   flex-flow: row wrap;
-  justify-content: center;
 }
 .nav--collateral .nav__list {
   display: flex;
@@ -3212,21 +3213,20 @@ figure figcaption cite {
 .section, [class^=section--] {
   scroll-snap-align: start;
   mix-blend-mode: difference;
-  max-inline-size: 55ch;
-  margin: 41.6666666667vh 8.3333333333vw 16.6666666667vh;
-  padding: 1rem;
+  margin: 41.6666666667vh 0 16.6666666667vh;
+  padding: 1rem 8.3333333333vw;
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .section, [class^=section--] {
-    margin-inline: 16.6666666667vw;
+    padding-inline: 16.6666666667vw;
   }
 }
 @media (min-width: 1200px) and (min-height: 0px) {
   .section, [class^=section--] {
     max-block-size: 50vh;
-    min-inline-size: 55ch;
     margin-block-start: 50vh;
-    margin-inline: 8.3333333333vw;
+    min-inline-size: 100vw;
+    padding-inline: 8.3333333333vw;
     overflow: auto;
   }
 }
