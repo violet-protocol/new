@@ -3239,6 +3239,7 @@ figure figcaption cite {
 @media (min-width: 1200px) and (min-height: 0px) {
   .section .section__inner, [class^=section--] .section__inner {
     inline-size: max-content;
+    padding-inline-start: calc((1vw * 8.3333333333) + 0.5rem);
   }
 }
 @media (min-width: 600px) and (min-height: 299px) {
@@ -3251,7 +3252,7 @@ figure figcaption cite {
     min-inline-size: 100vw;
     margin-block-start: 50vh;
     padding-block: 0;
-    padding-inline-start: calc((1vw * 8.3333333333) - 0.5rem);
+    padding-inline-start: 0;
     padding-inline-end: 0;
     overflow: auto;
   }
