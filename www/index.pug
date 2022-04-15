@@ -1,0 +1,14 @@
+include mixin/__mixin
+doctype html
+html(lang='en' class='no-js')
+	include include/_head.pug
+	body
+		include svg/svg.html
+		.page__outer
+			figure.background
+				video(src="image/background/0.mp4" autoplay loop muted)
+			.page__inner
+				include include/_page-header.pug
+				main.page-main 
+					include include/_index.pug
+	include include/_page-footer.pug  

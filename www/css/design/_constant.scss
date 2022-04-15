@@ -1,0 +1,87 @@
+@use "../base/index" as *;
+@forward "color";
+
+$unit: 1rem;
+$u: $unit;
+$u2: div($u, 2);
+$u3: div($u, 3);
+$u4: div($u, 4);
+$u5: div($u, 5);
+$u6: div($u, 6);
+$u7: div($u, 7);
+$u8: div($u, 8);
+$u9: div($u, 9);
+$u10: div($u, 10);
+$u11: div($u, 11);
+$u12: div($u, 12);
+
+$f--12: div(100, 12);
+
+$gridcolumngap: $u;
+$gridrowgap: $u;
+$flexgrid: 12;
+$f: $flexgrid;
+$w--1: percentage(div(1, $f));
+$w--2: percentage(div(2, $f));
+$w--3: percentage(div(3, $f));
+$w--4: percentage(div(4, $f));
+$w--5: percentage(div(5, $f));
+$w--6: percentage(div(6, $f));
+$w--7: percentage(div(7, $f));
+$w--8: percentage(div(8, $f));
+$w--9: percentage(div(9, $f));
+$w--10: percentage(div(10, $f));
+$w--11: percentage(div(11, $f));
+$w--12: percentage(div(12, $f));
+$w--full: $w--12;
+$w--all: $w--full;
+$w--threefifth: percentage(div(3, 5));
+$w--threefourth: percentage(div(3, 4));
+$w--twothird: percentage(div(2, 3));
+$w--half: $w--6;
+$w--third: $w--4;
+$w--fourth: $w--3;
+$w--fifth: percentage(div(1, 5));
+$w--sixth: $w--2;
+$w--seventh: percentage(div(1, 7));
+$w--eighth: percentage(div(1, 8));
+$w--ninth: percentage(div(1, 9));
+$w--tenth: percentage(div(1, 10));
+$w--eleventh: percentage(div(1, 11));
+$w--twelfth: $w--12;
+$w--twelvth: $w--12;
+
+// DIMENSIONS ###########
+$site-inline-size: $giant-width * 1.5;
+$site-width: $site-inline-size;
+
+$line-width: 55ch; //42ch; // https://caniuse.com/#feat=ch-unit
+
+$line-height: 1.4;
+$page-padding: $u;
+
+$box-inline-size: div(px2rem($site-width), 2);
+
+$column-inline-size: $line-width * $sqrt2;
+
+// GEOMETRY
+
+$radius: $u4;
+$angle: 7deg;
+$alpha: 0.4;
+$stroke: 2px;
+:root {
+	--alpha: #{$alpha};
+}
+
+// FILTER
+
+$filter: saturate(0) contrast(0.8);
+
+// TRANSITION and ANIMATION
+
+$duration: 1s;
+$transition-duration: $duration;
+$easing: cubic-bezier(0.2, 0, 0.6, 1);
+$timing-function: $easing;
+$transition-timing-function: $timing-function;

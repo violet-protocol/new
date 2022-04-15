@@ -1,0 +1,25 @@
+mixin map(lat, lon, zoom='6')
+	- let mapid= "map" + Math.ceil(Math.random()*99999999999)
+	nav.nav.map
+		figure(id=mapid)
+	script.
+		var mapid="#{mapid}"; 
+		var lon="#{lon}";
+		var lat="#{lat}";
+		var zoom="#{zoom}";
+		if (! window.mymap) {
+			window.mymap = {};
+		};
+		window.mymap[mapid] = L.map(mapid, {
+			center: [lat, lon],
+			zoom: zoom,
+			zoomControl: true,
+			attributionControl: true,
+		});
+		// https://leaflet-extras.github.io/leaflet-providers/preview/
+
+		var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+			attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+		});
+
+		Esri_WorldStreetMap.addTo(window.mymap[mapid]);

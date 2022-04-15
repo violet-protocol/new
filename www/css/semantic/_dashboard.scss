@@ -1,0 +1,27 @@
+@use "../use" as *;
+@use "../element/list" as *;
+
+.dashboard {
+	@include grid;
+	--grid-gap: #{$u};
+	grid-template-areas:
+		"heading"
+		"intro"
+		"list";
+	@include mq(large) {
+		grid-template-areas:
+			"heading heading"
+			"list intro";
+		grid-template-columns: auto auto;
+	}
+	&__list {
+		grid-area: list;
+		@include list--reset;
+		@include flex;
+		padding-inline: $u;
+	}
+	&__intro {
+		grid-area: intro;
+		font-size: $fs-2;
+	}
+}

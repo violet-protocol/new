@@ -1,0 +1,21 @@
+@use "../use" as *;
+
+*[class^="chart--"] {
+	svg > g:first-of-type {
+		text {
+			font-family: $font-family-heading;
+			font-size: $fs3;
+		}
+	}
+	text {
+		font-family: $font-family-body;
+		fill: $body-color;
+		stroke: $body-color;
+	}
+}
+
+.google-visualization-tooltip {
+	text {
+		fill: $brand--dark;
+	}
+}

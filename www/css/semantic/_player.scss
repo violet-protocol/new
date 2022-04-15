@@ -1,0 +1,13 @@
+@use "../use" as *;
+
+.player {
+	a {
+		@include flex;
+		align-items: baseline;
+	}
+	img {
+		border-radius: 50% 50% 0 50%;
+		max-width: $u * 2;
+		aspect-ratio: 1;
+	}
+}

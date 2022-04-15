@@ -1,0 +1,33 @@
+@use "../use" as *;
+.section {
+	scroll-snap-align: start;
+	//	mix-blend-mode: exclusion;
+	.section__inner {
+		background-image: linear-gradient(to right, $pitch, $transparent);
+		padding: $u;
+		inline-size: max-content;
+	}
+	margin: (5vh * $f--12) 0 (2vh * $f--12);
+	padding: 20vh (1vw * $f--12);
+	@include mq(medium) {
+		padding-inline: (2vw * $f--12);
+	}
+	@include mq(large) {
+		max-block-size: 50vh;
+		min-inline-size: 100vw;
+		margin-block-start: 50vh;
+		padding-inline-start: calc((1vw * #{$f--12}) - $u2);
+		padding-inline-end: 0;
+		overflow: auto;
+	}
+	&:first-of-type {
+		margin-block-start: 100vh;
+		@include mq(large) {
+			margin-block-start: 50vh;
+		}
+	}
+}
+
+[class^="section--"] {
+	@extend .section;
+}

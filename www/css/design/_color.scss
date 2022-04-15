@@ -1,0 +1,141 @@
+@use "../base/index" as *;
+
+// COLOR ###########
+
+// GREYSCALE COLOR ########### https://uxdesign.cc/my-struggle-with-colors-part-ii-ed71bff6302a
+$greyscale_h: 0;
+$greyscale_s: 0%;
+$white: hsl($greyscale_h, $greyscale_s, 100%);
+$offwhite: hsl($greyscale_h, $greyscale_s, 96%);
+$egg: $offwhite;
+$glossy: hsl($greyscale_h, $greyscale_s, 89%);
+$bright: hsl($greyscale_h, $greyscale_s, 78%);
+$light: hsl($greyscale_h, $greyscale_s, 67%);
+$gloomy: hsl($greyscale_h, $greyscale_s, 56%);
+$grey: hsl($greyscale_h, $greyscale_s, 46%);
+$gray: $grey;
+$dun: hsl($greyscale_h, $greyscale_s, 36%);
+$dark: hsl($greyscale_h, $greyscale_s, 27%);
+$night: hsl($greyscale_h, $greyscale_s, 18%);
+$offblack: hsl($greyscale_h, $greyscale_s, 9%);
+$pitch: $offblack;
+$black: hsl($greyscale_h, $greyscale_s, 0%);
+
+//BRAND COLOR
+$brand-h: 250;
+$brand-s: 80%;
+$brand-l: 43%;
+
+:root {
+	--brand-h: #{$brand-h};
+	--brand-s: #{$brand-s};
+	--brand-l: #{$brand-l};
+	--pattern--color: hsla(#{var(--brand-h)}, #{var(--brand-s)}, #{var(--brand-l)}, 0.6);
+	--brand--color: hsl(#{var(--brand-h)}, #{var(--brand-s)}, #{var(--brand-l)});
+	--fade--brand: hsla(#{var(--brand-h)}, #{var(--brand-s)}, #{var(--brand-l)}, 0.8);
+	--brand--bright: hsl(#{var(--brand-h)}, #{var(--brand-s)}, 86%);
+	--brand--light: hsl(#{var(--brand-h)}, calc(#{var(--brand-s)} * #{$sqrt2-major}), 86%);
+	--fade--light: hsla(#{var(--brand-h)}, calc(#{var(--brand-s)} * #{$sqrt2-major}), 86%, 0.8);
+	--brand--dark: hsl(#{var(--brand-h)}, #{var(--brand-s)}, 22%);
+	--fade--dark: hsla(#{var(--brand-h)}, #{var(--brand-s)}, 22%, 0.8);
+	--brand--night: hsl(#{var(--brand-h)}, calc(#{var(--brand-s)} * #{$sqrt2-major}), 12%);
+
+	--fade--mute: hsla(
+		#{var(--brand-h)},
+		calc(#{var(--brand-s)} * #{$sqrt2-major}),
+		calc(#{var(--brand-l)} * #{$sqrt2-minor}),
+		$.8
+	);
+}
+
+$pattern--color: var(--pattern--color);
+$brand--color: var(--brand--color);
+$fade--brand: var(--fade--brand);
+$brand--bright: var(--brand--bright);
+$brand--light: var(--brand--light);
+$fade--light: var(--fade--light);
+$brand--dark: var(--brand--dark);
+$fade--dark: var(--fade--dark);
+$brand--night: var(--brand--night);
+$brand--mute: var(--brand--mute);
+$fade--mute: var(--fade--mute);
+
+$main--color: $brand--color;
+
+$accent--color: hsl(53, 70%, 52%);
+
+// Socialweb Colors
+
+$rss-color: hsl(33, 100%, 60%);
+$google-color: hsl(217, 89%, 61%);
+$pinterest-color: hsl(358, 70%, 47%);
+$youtube-color: hsl(358, 79%, 45%);
+$twitter-color: hsl(203, 89%, 53%);
+$facebook-color: hsl(214, 89%, 52%);
+$linkedin-color: hsl(201, 100%, 35%);
+$whatsapp-color: hsl(151, 100%, 45%);
+$instagram-color: hsl(325, 50%, 50%);
+
+// HELPER COLOR ###########
+$debug_color: rebeccapurple;
+$admin_color: rebeccapurple;
+$transparent-black: hsla(0, 0%, 0%, 0);
+$transparent-white: hsla(0, 0%, 100%, 0);
+$transparent: $transparent-white;
+$sepia-h: 38;
+
+// TRAFFIC LIGHT COLOR
+$positive-color: hsl(143, 70%, 52%);
+$negative-color: hsl(323, 70%, 52%);
+$mediocre-color: $accent--color;
+$neutral-color: $mediocre-color;
+$muted-color: $brand--mute;
+
+// HIGHLIGHT COLOR
+//$highlight-background-color: hsl(45,	90%,	80%);
+$highlight-background-color: hsl(#{var(--brand-h)}, 100%, 82%);
+$highlight-color: hsl(#{var(--brand-h)}, 30%, 30%);
+
+// ASSIGN COLOR ###########
+$body-color: $white;
+$body-background-color: $brand--night;
+$header-background-color: $body-background-color;
+$link-color: $brand--light;
+$link-background-color: $white;
+$link-color-hover: $brand--color;
+$link-background-color-hover: $white;
+$link-color-visited: none;
+$link-color-active: $link-color;
+$icon-color: $link-color;
+$cta-color: $brand--night;
+$cta-background-color: $white;
+$cta-color-hover: $cta-color;
+$cta-background-color-hover: $brand--light;
+
+//ins del
+$ins-color: $body-color;
+$del-color: $negative_color;
+// Selection colors
+$use-selection-colors: true;
+$selection-background-color: $highlight-background-color;
+$selection-color: $highlight-color;
+$tap-highlight-color: $transparent;
+$placeholder-color: $grey;
+
+$list--color: ("white", $white), ("offwhite", $offwhite), ("egg", $egg), ("glossy", $glossy), ("bright", $bright),
+	("light", $light), ("gloomy", $gloomy), ("grey", $grey), ("gray", $gray), ("dun", $dun), ("dark", $dark),
+	("night", $night), ("offblack", $offblack), ("pitch", $pitch), ("black", $black), ("positive", $positive_color),
+	("mediocre", $mediocre_color), ("negative", $negative_color), ("neutral", $neutral_color), ("cta", $cta_color),
+	("admin", $admin_color), ("rss", $rss_color), ("google", $google_color), ("pinterest", $pinterest_color),
+	("youtube", $youtube_color), ("twitter", $twitter_color), ("facebook", $facebook_color), ("linkedin", $linkedin_color),
+	("whatsapp", $whatsapp_color), ("instagram", $instagram_color), ("brand", $brand--color),
+	("brand--dark", $brand--dark), ("brand--light", $brand--light);
+
+@each $color in $list--color {
+	.background-color-#{nth($color,1)} {
+		background-color: nth($color, 2);
+	}
+	.color-#{nth($color,1)} {
+		color: nth($color, 2);
+	}
+}

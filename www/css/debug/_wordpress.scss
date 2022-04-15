@@ -1,0 +1,42 @@
+@use "../use" as *;
+
+// DEBUG WORDPRESS ###########
+
+.debug,
+.admin-bar,
+.logged-in {
+	.page__outer:after {
+		@include debugflag;
+		content: var(--viewport);
+		position: fixed;
+		z-index: z(debug);
+		bottom: 0;
+		left: 0;
+	}
+}
+
+$adminBarHeight: 32px;
+.admin-bar {
+	#wpadminbar {
+		opacity: 0.9;
+		z-index: z(debug);
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+//	.admin-bar .page__outer *, .debug .page__outer * {
+//	//	outline: 1px dashed $debug_color;
+//		 &[class]:hover {
+//		//		outline: 2px solid $debug_color;
+//			 &:before {
+//				@include debugflag;
+//				position: fixed;
+//				z-index: z(fixed);
+//				bottom: 0;
+//				right: 0;
+//			 	content: attr(class);
+//				}
+//		}
+//	}

@@ -1,0 +1,75 @@
+@use "../use" as *;
+@use "../element/index" as *;
+
+@mixin nav__item {
+	max-width: none;
+	font-family: $font-family-nav;
+	a:link,
+	a:visited {
+		color: $link-color;
+		@include normal--inverse;
+	}
+
+	a:focus,
+	a:hover {
+		color: $white;
+	}
+
+	a:active {
+		color: $link-color-active;
+	}
+
+	&.is-current a {
+		background-color: $brand--color;
+	}
+	a {
+		padding: 0.5ch 1ch;
+	}
+}
+
+[class*="nav__list"] {
+	@include list--reset;
+	@include flex;
+	--flex-gap: #{$u2};
+	text-align: end;
+	flex-flow: column nowrap;
+	> * {
+	}
+}
+
+[class*="nav__item"] {
+	@include nav__item;
+	//	@include uppercase;
+}
+
+.nav {
+	&--main {
+		font-size: $fs3;
+		padding: $u;
+		.nav__item {
+			pointer-events: none;
+		}
+	}
+	&--document {
+		position: fixed;
+		z-index: z(fixed);
+		inset-block-start: calc(20vh - 2em);
+		@include mq(medium) {
+			inset-inline-start: (2vw * $f--12);
+		}
+		@include mq(large) {
+			inset-block-start: calc(50vh - 2em);
+			inset-inline-start: div(100vw, 12);
+		}
+		.nav__list {
+			flex-flow: row wrap;
+		}
+	}
+	&--collateral {
+		.nav__list {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: start;
+		}
+	}
+}

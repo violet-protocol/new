@@ -1,0 +1,119 @@
+@use "../use" as *;
+@use "../element/list" as *;
+
+.solution {
+	display: grid;
+	@include normal--inverse;
+	padding: $u;
+	max-width: $large-width;
+	margin: auto;
+	tbody {
+		@include grid;
+		--grid-gap: #{$u * 2};
+		grid-auto-flow: dense;
+		grid-template-columns: 1fr;
+		@include mq(large) {
+			//	grid-template-columns: 1fr 1fr;
+		}
+		align-items: start;
+	}
+	thead,
+	tfoot {
+		display: none;
+	}
+	&__set {
+		@include grid;
+		--grid-gap: #{$u4 $u * 2};
+		grid-template-columns: 5fr 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"question question difficulty"
+			"answer answer time"
+			"answer answer point"
+			"tag tag point";
+		th,
+		td {
+			border: none;
+		}
+	}
+	&__question {
+		grid-area: question;
+		// font-family: $font-family-brand;
+		font-size: $fs-1;
+		align-self: start;
+	}
+	&__tag {
+		grid-area: tag;
+		font-size: $fs-3;
+		color: $brand--color;
+		text-align: end;
+		align-self: end;
+	}
+	&__difficulty {
+		grid-area: difficulty;
+		[class^="difficulty--"] {
+			font-family: $font-family-brand;
+			@include uppercase;
+			padding: $u8 $u4;
+			font-size: $fs-4;
+		}
+		align-self: end;
+	}
+	&__point {
+		grid-area: point;
+		align-self: start;
+	}
+	&__time {
+		grid-area: time;
+		align-self: end;
+	}
+
+	&__answer {
+		grid-area: answer;
+		align-self: start;
+		&-list {
+			@include list--reset;
+			@include flex;
+			--flex-gap: #{$u4};
+			align-items: end;
+		}
+		li {
+			flex: 1 0 100%;
+			@include mq(medium) {
+				flex-basis: percentage(div(1, 3));
+			}
+			max-width: none;
+			&:before {
+				display: none;
+			}
+			background-color: $night;
+			color: $brand--light;
+			padding: $u4 $u2;
+			text-indent: 0;
+			border-radius: $radius;
+			text-align: center;
+			font-size: $fs-2;
+		}
+	}
+	.player {
+		&--wrong {
+			background-color: $negative-color;
+			@include ultra;
+		}
+		&--correct {
+			background-color: $positive-color;
+			color: $black;
+			@include ultra;
+		}
+		&--skipped {
+			opacity: $alpha;
+		}
+	}
+	.answer {
+		&--correct {
+			box-shadow: 0 0 0 $stroke * 2 $positive-color inset;
+			font-size: $fs2;
+			font-family: $font-family-brand;
+		}
+	}
+}

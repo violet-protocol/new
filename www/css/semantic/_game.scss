@@ -1,0 +1,116 @@
+@use "../use" as *;
+@use "../element/list" as *;
+@use "../layout/grid" as *;
+@use "../semantic/udo" as *;
+
+.game {
+	&__kicker {
+		@extend .udo__kicker;
+		max-width: none;
+	}
+	display: grid;
+
+	@include mq(medium) {
+		grid-template-rows: auto;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@include mq(large) {
+		grid-template-columns: $phi-major * 1fr $phi-minor * 1fr;
+	}
+	&__author {
+		a {
+		}
+	}
+	&__tag {
+		@include list--reset;
+		@include list--flex;
+		justify-content: center;
+		margin-top: $u2;
+		a {
+			font-size: $fs-4;
+			@include normal--inverse;
+			font-family: $font-family-body;
+		}
+	}
+	&__heading {
+		position: sticky;
+		z-index: z(sticky);
+		top: 0;
+		margin: $u 0;
+		padding: $u * 2 $u * 3 $u;
+		text-align: center;
+		@include ultra--inverse;
+		color: $brand--bright;
+		background-color: $brand--color;
+	}
+	&__figure {
+		width: 100%;
+		max-height: $phi-minor * 100vh;
+		position: sticky;
+		top: 0;
+		@include mq(medium) {
+			max-height: none;
+			height: 100vh;
+		}
+	}
+	&__inner {
+		position: relative;
+		min-height: 100vh;
+		z-index: z(up);
+		max-inline-size: $line-width;
+		margin-right: auto;
+		@include normal--inverse;
+		color: $brand--light;
+		background-color: $brand--dark;
+	}
+	&__copy {
+		margin: 0 0 $u;
+	}
+	&__quiz {
+		position: sticky;
+		z-index: z(sticky);
+		bottom: 0;
+		text-align: center;
+		background-color: $brand--color;
+		color: $brand--light;
+		padding: $u4 $u;
+	}
+	&__cta {
+		padding: $u;
+		width: 100%;
+		border-radius: $radius;
+		overflow: hidden;
+		font-size: $fs6;
+		color: $brand--color;
+		p {
+			@include normal;
+			text-transform: none;
+			margin: $u8;
+			font-size: $fs-2;
+			max-width: none;
+		}
+	}
+	&__stat {
+		@include flex;
+		--flex-gap: #{$u};
+		text-align: left;
+		justify-content: center;
+		line-height: 1;
+		font-size: $fs4;
+	}
+	&__aside {
+		font-size: $fs-2;
+		p {
+			max-width: none;
+			margin: $u 0;
+		}
+	}
+	&__all {
+		font-size: $fs-2;
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: z(fixed);
+	}
+}

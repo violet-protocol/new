@@ -1,0 +1,8 @@
+mixin figure(context, imgsrc, caption, cite)
+	figure(class!=context + "__figure")
+		img(src!=imgsrc)
+		if caption || cite
+			if caption
+			figcaption!= caption
+				if cite
+					cite!= cite

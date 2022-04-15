@@ -1,0 +1,10 @@
+include www/mixin/__mixin
+doctype html
+html(lang='en' class='no-js')
+	include www/include/_head.pug
+	body
+		include www/svg/svg.html
+		.page__outer
+			.page__inner
+				include www/include/_page-header.pug
+	include www/include/_page-footer.pug

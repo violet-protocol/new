@@ -1,9 +1,0 @@
-@use "../use" as *;
-@use "../element/list" as *;
-
-.author {
-	&__bio {
-		margin: $u auto;
-		text-align: center;
-	}
-}

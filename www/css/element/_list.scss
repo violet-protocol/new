@@ -1,0 +1,202 @@
+@use "../use" as *;
+
+// LIST ###
+
+@mixin list {
+	counter-reset: counter--li;
+	margin-block-end: $u;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-block-start: $u;
+	padding-block-end: $u;
+	@supports not (padding-block: 0) {
+		margin: auto 0 $u;
+		padding: $u auto;
+	}
+}
+@mixin list--flex {
+	*:hover > & {
+		a {
+			//	box-shadow: 0 0 0 1px $brand--color;
+		}
+	}
+	display: flex;
+	flex-flow: row wrap;
+	font-size: $fs-1;
+	li {
+		padding: $u8;
+		flex: 1 1 percentage(div(1, 3));
+		text-align: center;
+	}
+	a {
+		display: grid;
+		place-content: center;
+		@include hyphens(none);
+		background-color: $white;
+		color: $grey;
+		//box-shadow: 0 0 0 1px $body-background-color;
+		border-radius: $radius;
+		padding: $u4;
+		height: 100%;
+		width: 100%;
+		&:hover {
+			background-color: $brand--color;
+			//box-shadow: 0 0 0 1px $black;
+			color: $white;
+		}
+	}
+	span {
+		display: block;
+		line-height: 1.2;
+	}
+}
+
+@mixin list__item {
+	//	list-style: "—" inside;
+	//	@include italic;
+	em,
+	i {
+		//	@include normal;
+	}
+	max-width: $line-width;
+	padding: 0 $u2 $u2 4ch;
+	--text-indent: -3.5ch;
+	text-indent: var(--text-indent);
+	background-color: $header-background-color;
+	&:not(:last-child) {
+		//	box-shadow: 0 $stroke 0 0 $body-background-color;
+	}
+
+	&:before {
+		content: "—";
+		display: inline-block;
+		//	font-family: $font-family-brand;
+		min-width: 2ch;
+		margin-right: $u;
+		text-align: right;
+		color: inherit;
+		@include bold;
+		//	@include italic-not;
+	}
+}
+@mixin list__item--ordered {
+	list-style: none;
+	counter-increment: counter--li;
+	&:before {
+		content: counter(counter--li) ".";
+	}
+
+	//	&:before {
+	//		content: "0" counter(counter--li);
+	//	}
+	//	&:nth-child(n + 10):before {
+	//		content: counter(counter--li);
+	//	}
+}
+
+ul,
+ol {
+	@include list;
+}
+li {
+	@include list__item;
+}
+ol li {
+	@include list__item--ordered;
+}
+
+// DEFINITION LIST #
+
+@mixin definitionlist {
+	@include grid;
+	--grid-gap: #{$stroke};
+	align-items: stretch;
+	grid-template-columns: auto 1fr;
+	margin: $u * 2 0;
+	//	box-shadow: 0 0 0 $stroke $brand--dark;
+	background-color: $body-background-color;
+	address {
+		margin: 0;
+	}
+	dt,
+	dd {
+		padding: $u2 $u;
+		background-color: $header-background-color;
+		&.fullwidth {
+			grid-column: 1 / 3;
+		}
+	}
+	dt {
+		text-align: end;
+		//	font-family: $font-family-brand;
+		&.fullwidth {
+			padding-block: $u * 2 0;
+			text-align: start;
+			//	@include bold;
+			grid-column: 1 / 3;
+			~ dd {
+				grid-column: 1 / 3;
+				@include normal;
+			}
+		}
+	}
+	dd {
+		@include bold;
+	}
+}
+
+dl {
+	@include definitionlist;
+}
+
+// tags
+
+@mixin list--flex {
+	@include flex;
+	flex-direction: row;
+	--flex-gap: #{$stroke};
+	li {
+		flex: 0 1 auto;
+		padding: 0;
+		margin: 0;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: $font-family-brand;
+		@include uppercase;
+	}
+	a {
+		display: block;
+		padding: $u4 $u2;
+		@include bold--inverse;
+		color: $white;
+	}
+}
+
+@mixin list--reset {
+	margin: 0;
+	padding: 0;
+	background-color: unset;
+	li {
+		background-color: inherit;
+		margin: 0;
+		padding: 0;
+		text-indent: 0;
+		&:before {
+			display: none;
+		}
+		&:not(:last-child) {
+			//	box-shadow: none;
+		}
+		//	@include normal;
+		//	@include italic-not;
+		&:nth-child(1n) {
+			&:before,
+			&:after {
+				content: unset;
+			}
+		}
+	}
+}

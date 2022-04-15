@@ -1,0 +1,37 @@
+@use "../use" as *;
+
+figure {
+	position: relative;
+	line-height: 0;
+	//	height: 100vh;
+	img {
+		animation: fadeIn $duration $easing;
+		height: 100%;
+		object-fit: cover;
+		object-position: center $phi-minor * 100%;
+	}
+	&.is-contain {
+		background-color: $main--color;
+		padding: $u2;
+		img {
+			object-fit: contain;
+			object-position: center center;
+		}
+	}
+
+	figcaption {
+		position: absolute;
+		z-index: z(up);
+		@include inset(auto, $u * 2, $u * 1, auto);
+		transform: rotateZ(0.25turn);
+		transform-origin: right bottom;
+		color: $white;
+		text-shadow: 0px 0px 3px $black;
+		cite {
+			font-size: $fs-4;
+			@include normal;
+		}
+	}
+}
+.figure {
+}

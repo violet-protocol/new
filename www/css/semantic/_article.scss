@@ -1,0 +1,13 @@
+@use "../use" as *;
+@use "../element/list" as *;
+
+.article {
+	@include mq(large) {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+}
+
+[class^="article--"] {
+	@extend .article;
+}
