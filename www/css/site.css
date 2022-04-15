@@ -2996,6 +2996,11 @@ figure figcaption cite {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+@media (min-width: 1200px) and (min-height: 0px) {
+  .page-footer {
+    inset-inline-start: calc(8.3333333333vw - 1rem);
+  }
+}
 .page-footer:hover {
   background-color: black;
 }

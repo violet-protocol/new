@@ -88,6 +88,9 @@
 		position: fixed;
 		inset-block-end: 0;
 		inset-inline: 0;
+		@include mq(large) {
+			inset-inline-start: calc(#{div(100vw, 12)} - #{$u});
+		}
 		background-color: $brand--mute;
 		@include normal--inverse;
 		font-size: $fs-3;
