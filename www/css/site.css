@@ -3230,7 +3230,11 @@ figure figcaption cite {
 .section .section__inner, [class^=section--] .section__inner {
   background-image: linear-gradient(to right, #171717, rgba(255, 255, 255, 0));
   padding: 1rem;
-  inline-size: max-content;
+}
+@media (min-width: 1200px) and (min-height: 0px) {
+  .section .section__inner, [class^=section--] .section__inner {
+    inline-size: max-content;
+  }
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .section, [class^=section--] {
