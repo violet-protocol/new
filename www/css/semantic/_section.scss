@@ -10,12 +10,12 @@
 	margin: (5vh * $f--12) 0 (2vh * $f--12);
 	padding: 20vh (1vw * $f--12) 0;
 	@include mq(medium) {
-		padding: 0 (2vw * $f--12);
+		padding: 20vh (2vw * $f--12);
 	}
 	@include mq(large) {
-		max-block-size: 50vh;
 		min-inline-size: 100vw;
 		margin-block-start: 50vh;
+		padding-block: 0;
 		padding-inline-start: calc((1vw * #{$f--12}) - $u2);
 		padding-inline-end: 0;
 		overflow: auto;

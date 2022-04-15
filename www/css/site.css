@@ -3234,14 +3234,14 @@ figure figcaption cite {
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .section, [class^=section--] {
-    padding: 0 16.6666666667vw;
+    padding: 20vh 16.6666666667vw;
   }
 }
 @media (min-width: 1200px) and (min-height: 0px) {
   .section, [class^=section--] {
-    max-block-size: 50vh;
     min-inline-size: 100vw;
     margin-block-start: 50vh;
+    padding-block: 0;
     padding-inline-start: calc((1vw * 8.3333333333) - 0.5rem);
     padding-inline-end: 0;
     overflow: auto;
