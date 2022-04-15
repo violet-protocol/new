@@ -3225,7 +3225,7 @@ figure figcaption cite {
 .section, [class^=section--] {
   scroll-snap-align: start;
   margin: 41.6666666667vh 0 16.6666666667vh;
-  padding: 20vh 8.3333333333vw;
+  padding: 20vh 8.3333333333vw 0;
 }
 .section .section__inner, [class^=section--] .section__inner {
   background-image: linear-gradient(to right, #171717, rgba(255, 255, 255, 0));
@@ -3234,7 +3234,7 @@ figure figcaption cite {
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .section, [class^=section--] {
-    padding-inline: 16.6666666667vw;
+    padding: 0 16.6666666667vw;
   }
 }
 @media (min-width: 1200px) and (min-height: 0px) {

@@ -8,9 +8,9 @@
 		inline-size: max-content;
 	}
 	margin: (5vh * $f--12) 0 (2vh * $f--12);
-	padding: 20vh (1vw * $f--12);
+	padding: 20vh (1vw * $f--12) 0;
 	@include mq(medium) {
-		padding-inline: (2vw * $f--12);
+		padding: 0 (2vw * $f--12);
 	}
 	@include mq(large) {
 		max-block-size: 50vh;
