@@ -53,8 +53,10 @@
 	&--document {
 		position: fixed;
 		z-index: z(fixed);
-		inset-block-start: $u;
-		inset-inline-end: $u;
+		@include mq(large) {
+			inset-block-start: 42vh;
+			inset-inline-start: div(100vw, 12);
+		}
 		.nav__list {
 			flex-flow: row wrap;
 		}

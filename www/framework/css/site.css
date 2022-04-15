@@ -3177,8 +3177,12 @@ figure figcaption cite {
 .nav--document {
   position: fixed;
   z-index: 1400;
-  inset-block-start: 1rem;
-  inset-inline-end: 1rem;
+}
+@media (min-width: 1200px) and (min-height: 0px) {
+  .nav--document {
+    inset-block-start: 42vh;
+    inset-inline-start: 8.3333333333vw;
+  }
 }
 .nav--document .nav__list {
   flex-flow: row wrap;
@@ -3212,9 +3216,13 @@ figure figcaption cite {
 
 .section, [class^=section--] {
   scroll-snap-align: start;
-  mix-blend-mode: difference;
   margin: 41.6666666667vh 0 16.6666666667vh;
   padding: 1rem 8.3333333333vw;
+}
+.section .section__inner, [class^=section--] .section__inner {
+  background-image: linear-gradient(to right, #171717, rgba(255, 255, 255, 0));
+  padding: 1rem;
+  inline-size: max-content;
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .section, [class^=section--] {
@@ -3224,9 +3232,10 @@ figure figcaption cite {
 @media (min-width: 1200px) and (min-height: 0px) {
   .section, [class^=section--] {
     max-block-size: 50vh;
-    margin-block-start: 50vh;
     min-inline-size: 100vw;
-    padding-inline: calc((1vw * 8.3333333333) + 1rem);
+    margin-block-start: 50vh;
+    padding-inline-start: calc((1vw * 8.3333333333) + 0.5rem);
+    padding-inline-end: 0;
     overflow: auto;
   }
 }
