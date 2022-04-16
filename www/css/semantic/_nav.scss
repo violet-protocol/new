@@ -13,6 +13,7 @@
 	a:focus,
 	a:hover {
 		color: $white;
+		@include bold--inverse;
 	}
 
 	a:active {
@@ -20,7 +21,9 @@
 	}
 
 	&.is-current a {
-		background-color: $brand--color;
+		color: $white;
+		@include semibold--inverse;
+		pointer-events: none;
 	}
 	a {
 		padding: 0.5ch 1ch;

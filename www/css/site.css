@@ -646,8 +646,8 @@ template {
 }
 
 :root {
-  --webkit-font-smoothing: subpixel-antialiased;
-  --moz-osx-font-smoothing: auto;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -676,112 +676,64 @@ template {
 
 :root {
   --weight: 400;
+  --italic: 0;
   --aalt: "aalt" off;
-  --c2sc: "c2sc" off;
-  --case: "case" off;
-  --cpsp: "cpsp" off;
-  --cswh: "cswh" off;
-  --dlig: "dlig" off;
-  --dnom: "dnom" off;
-  --frac: "frac" off;
-  --hist: "hist" off;
-  --lnum: "lnum" on;
+  --calt: "calt" on;
   --kern: "kern" on;
-  --liga: "liga" on;
-  --nalt: "nalt" off;
-  --numr: "numr" off;
-  --onum: "onum" off;
-  --ordn: "ordn" off;
-  --pnum: "pnum" off;
   --salt: "salt" off;
-  --sinf: "sinf" off;
-  --smcp: "smcp" off;
-  --ss01: "ss01" on;
+  --ss01: "ss01" off;
   --ss02: "ss02" off;
   --ss03: "ss03" off;
   --ss04: "ss04" off;
   --ss05: "ss05" off;
   --ss06: "ss06" off;
-  --subs: "subs" off;
-  --sups: "sups" off;
-  --swsh: "swsh" off;
-  --titl: "titl" off;
-  --tnum: "tnum" on;
-  --zero: "zero" off;
+  --ss07: "ss07" off;
+  --ss08: "ss08" off;
+  --ss09: "ss09" off;
+  --ss10: "ss10" off;
 }
 
 * {
+  --ss03: "ss03" on;
+  --ss06: "ss06" on;
+  --ss08: "ss08" on;
+  --ss02: "ss02" on;
+  --ss04: "ss04" on;
+  --ss05: "ss05" on;
+  --ss09: "ss09" on;
+  --ss10: "ss10" on;
+  --ss11: "ss11" on;
   font-weight: var(--weight);
-  font-variation-settings: "wght" var(--weight);
-  font-feature-settings: var(--aalt), var(--c2sc), var(--case), var(--cpsp), var(--cswh), var(--dlig), var(--dnom), var(--frac), var(--hist), var(--lnum), var(--kern), var(--liga), var(--nalt), var(--numr), var(--onum), var(--ordn), var(--pnum), var(--salt), var(--sinf), var(--smcp), var(--ss01), var(--ss02), var(--ss03), var(--ss04), var(--ss05), var(--ss06), var(--subs), var(--sups), var(--swsh), var(--titl), var(--tnum), var(--zero);
+  font-variation-settings: "wght" var(--weight), "ital" var(--italic);
+  font-feature-settings: var(--aalt), var(--calt), var(--kern), var(--salt), var(--ss01), var(--ss02), var(--ss03), var(--ss04), var(--ss05), var(--ss06), var(--ss07), var(--ss08), var(--ss09), var(--ss10);
 }
 
 h1,
 h2,
 h3 {
+  --ss02: "ss02" on;
   --ss04: "ss04" on;
   --ss05: "ss05" on;
+  --ss09: "ss09" on;
+  --ss10: "ss10" on;
+  --ss11: "ss11" on;
 }
 
 @font-face {
-  font-family: "Roslindale";
-  src: url("../font/roslindale/roslindale-variable.woff2") format("woff2");
-  src: url("../font/roslindale/roslindale-variable.woff") format("woff");
+  font-family: "Noi Variable Fix";
+  src: url("../font/sans/NoiVariableFixTrialGX.woff2") format("woff2");
+  src: url("../font/sans/NoiVariableFixTrialGX.woff") format("woff");
   font-display: swap;
-  font-weight: 200 900;
-  font-stretch: 75 100;
-}
-/* atkinson-hyperlegible-regular - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-regular.woff2") format("woff2"), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* atkinson-hyperlegible-italic - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: italic;
-  font-weight: 400;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-italic.woff2") format("woff2"), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-italic.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* atkinson-hyperlegible-700 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700.woff2") format("woff2"), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* atkinson-hyperlegible-700italic - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: italic;
-  font-weight: 700;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700italic.woff2") format("woff2"), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700italic.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* tinkuy-patterns-d */
-@font-face {
-  font-display: block;
-  font-family: "Tinkuy Patterns D";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../font/tinkuy-patterns/tinkuy-patterns-d.woff2") format("woff2"), url("../font/tinkuy-patterns/tinkuy-patterns-d.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-weight: 100 900;
+  font-style: 0 10;
 }
 @font-face {
-  font-family: "Readexpro";
-  src: url("../font/readexpro/Readexpro[HEXP,wght].woff2") format("woff2");
-  src: url("../font/readexpro/Readexpro[HEXP,wght].woff") format("woff");
+  font-family: "Noi Variable Flex";
+  src: url("../font/sans/NoiVariableFlexTrialGX.woff2") format("woff2");
+  src: url("../font/sans/NoiVariableFlexTrialGX.woff") format("woff");
   font-display: swap;
-  font-weight: 160 700;
+  font-weight: 100 900;
+  font-style: 0 10;
 }
 ::-webkit-scrollbar {
   width: auto;
@@ -960,23 +912,21 @@ abbr[title],
 }
 
 .number {
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   font-size: min(6vw, 2.25rem);
   line-height: 1;
-  --weight: 650;
+  --weight: 850;
 }
 .number time {
-  --weight: 650;
+  --weight: 850;
 }
 
 .unit {
   font-size: min(2vw, 0.5rem);
   display: block;
   text-transform: uppercase;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
   --weight: 350;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
 }
 
 @media (min-width: 600px) and (min-height: 299px) {
@@ -1548,8 +1498,7 @@ abbr[title],
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
-  font-style: normal;
-  font-style: normal;
+  --italic: 0;
   --weight: 400;
   -webkit-hyphens: none;
   -epub-hyphens: none;
@@ -1565,7 +1514,7 @@ abbr[title],
   cursor: pointer;
   border: none;
   vertical-align: middle;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: white;
   color: var(--brand--night);
@@ -1643,9 +1592,8 @@ html {
 body {
   color: white;
   background-color: var(--brand--night);
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
   font-size: 100%;
-  font-style: normal;
   --weight: 400;
   line-height: 1.4;
   -webkit-hyphens: auto;
@@ -1663,8 +1611,6 @@ body {
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 2;
   -webkit-text-size-adjust: 100%;
-  --webkit-font-smoothing: subpixel-antialiased;
-  --moz-osx-font-smoothing: auto;
   text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01);
 }
 
@@ -1733,14 +1679,14 @@ body {
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #757575;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
   --webkit-font-smoothing: subpixel-antialiased;
   --moz-osx-font-smoothing: auto;
 }
 
 ::placeholder {
   color: #757575;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
 }
 
 :placeholder-shown {
@@ -1754,7 +1700,7 @@ body {
 article p:not([class]) a:not([class]),
 article ul:not([class]) li:not([class]) a:not([class]),
 article ol:not([class]) li:not([class]) a:not([class]) {
-  --weight: 300;
+  --weight: 275;
   padding: 0 0.5ch;
   background-color: white;
 }
@@ -1845,9 +1791,7 @@ blockquote {
   --module-background-color: var(--brand--mute);
   color: white;
   --weight: 350;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
-  font-style: italic;
+  --italic: 10;
 }
 @supports not (padding-block: 0) {
   blockquote {
@@ -1858,10 +1802,10 @@ blockquote {
 
 blockquote > p:first-of-type:before {
   display: inline-block;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   line-height: 0;
-  font-style: normal;
-  --weight: 550;
+  --italic: 0;
+  --weight: 600;
   color: var(--brand--color);
   font-size: min(6vw, 2.25rem);
   vertical-align: baseline;
@@ -1869,10 +1813,10 @@ blockquote > p:first-of-type:before {
 
 blockquote > p:last-of-type:after {
   display: inline-block;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   line-height: 0;
-  font-style: normal;
-  --weight: 550;
+  --italic: 0;
+  --weight: 600;
   color: var(--brand--color);
   font-size: min(6vw, 2.25rem);
   vertical-align: baseline;
@@ -1964,7 +1908,7 @@ textarea {
   line-height: 1.4;
   color: black;
   background-color: white;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
   outline-offset: 0;
   outline-width: 0.25rem;
   outline-color: var(--brand--dark);
@@ -2018,8 +1962,7 @@ button {
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
-  font-style: normal;
-  font-style: normal;
+  --italic: 0;
   --weight: 400;
   -webkit-hyphens: none;
   -epub-hyphens: none;
@@ -2035,7 +1978,7 @@ button {
   cursor: pointer;
   border: none;
   vertical-align: middle;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: white;
   color: var(--brand--night);
@@ -2079,12 +2022,11 @@ button.is-current {
 }
 
 [type=submit] {
-  --weight: 700;
+  --weight: 900;
   background-color: #2fda71;
 }
 
 [type=reset] {
-  font-style: normal;
   --weight: 400;
   background-color: #da2f99;
 }
@@ -2095,7 +2037,7 @@ select {
   padding: 0.25rem;
   margin: 0;
   border: 1px solid currentColor;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
   background-color: white;
 }
 select[multiple] {
@@ -2138,7 +2080,7 @@ select[multiple] option:checked:before {
   vertical-align: middle;
   height: 1.5em;
   width: 100%;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
 }
 
 [type=range] {
@@ -2147,7 +2089,7 @@ select[multiple] option:checked:before {
 
 [type=color] {
   width: 1.5em;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Flex", sans-serif;
 }
 
 [type=search] {
@@ -2372,9 +2314,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   line-height: 1;
-  --weight: 550;
+  --weight: 600;
   max-width: 55ch;
   margin: 2rem 0 1rem 0;
   -webkit-hyphens: auto;
@@ -2452,7 +2394,7 @@ h6 {
 
 h6 {
   font-size: min(3vw, 0.75rem);
-  --weight: 200;
+  --weight: 150;
   text-transform: uppercase;
 }
 
@@ -2501,21 +2443,19 @@ u {
 }
 
 strong, b {
-  --weight: 600;
+  --weight: 650;
 }
 
 em, i {
-  font-style: italic;
+  --italic: 10;
 }
 
 address {
   margin-bottom: 1rem;
-  font-style: normal;
   --weight: 400;
 }
 
 time {
-  font-style: normal;
   --weight: 400;
 }
 
@@ -2635,7 +2575,7 @@ li:before {
   margin-right: 1rem;
   text-align: right;
   color: inherit;
-  --weight: 600;
+  --weight: 650;
 }
 
 ol li {
@@ -2679,11 +2619,10 @@ dl dt.fullwidth {
 }
 dl dt.fullwidth ~ dd {
   grid-column: 1/3;
-  font-style: normal;
   --weight: 400;
 }
 dl dd {
-  --weight: 600;
+  --weight: 650;
 }
 
 form {
@@ -2693,9 +2632,9 @@ form {
 form label, form .tml-label {
   margin: 0.5rem 0;
   font-size: min(3vw, 0.625rem);
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   text-transform: uppercase;
-  --weight: 550;
+  --weight: 600;
 }
 form__sort {
   margin-inline-end: auto;
@@ -2740,9 +2679,9 @@ form input:required ~ span:after {
 .wpcf7 label, .wpcf7 .tml-label {
   margin: 0.5rem 0;
   font-size: min(3vw, 0.625rem);
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   text-transform: uppercase;
-  --weight: 550;
+  --weight: 600;
 }
 .wpcf7__sort {
   margin-inline-end: auto;
@@ -2817,7 +2756,6 @@ figure figcaption {
 }
 figure figcaption cite {
   font-size: min(2vw, 0.5rem);
-  font-style: normal;
   --weight: 400;
 }
 
@@ -2845,8 +2783,8 @@ figure figcaption cite {
 .table--zebra th {
   color: var(--brand--dark);
   background-color: var(--brand--bright);
-  --weight: 300;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  --weight: 275;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
 }
 @media (min-width: 1200px) and (min-height: 0px) {
   .table--zebra th.highscore__rank {
@@ -2854,9 +2792,9 @@ figure figcaption cite {
   }
 }
 .table--zebra tbody .highscore__rank {
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   font-size: min(6vw, 2.25rem);
-  --weight: 550;
+  --weight: 600;
 }
 .table--zebra tr:nth-child(2n+1) td {
   background-color: var(--brand--dark);
@@ -2868,8 +2806,6 @@ figure figcaption cite {
   border: 1px solid var(--brand--color);
   font-variant-numeric: tabular-nums;
   --weight: 350;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
 }
 .table--zebra th a,
 .table--zebra td a {
@@ -2886,7 +2822,7 @@ figure figcaption cite {
   background-color: var(--brand--dark);
 }
 .table--zebra th {
-  --weight: 600;
+  --weight: 650;
 }
 .table--zebra tbody tr:hover th,
 .table--zebra tbody tr:hover td {
@@ -2915,6 +2851,7 @@ figure figcaption cite {
   font-size: min(4vw, 1rem);
 }
 .page-header {
+  mix-blend-mode: difference;
   display: flex;
   align-items: flex-start;
   position: fixed;
@@ -2928,9 +2865,6 @@ figure figcaption cite {
 .page-header a {
   color: white;
 }
-.page-brand {
-  mix-blend-mode: difference;
-}
 .page-brand__logo {
   transform: rotate(-0.25turn) translateY(-18vw);
   transform-origin: top right;
@@ -2938,6 +2872,22 @@ figure figcaption cite {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition-property: opacity transform;
+}
+.page-brand__logo .logogram {
+  color: white;
+}
+.page-brand__logo .logogram h1 {
+  font-size: min(6vw, 3.375rem);
+  transition: all 1s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition-property: font-size;
+}
+.page-brand__logo .logogram h1 .char {
+  --delay: calc(-1 * (var(--char-index) + 1) * (4000ms - 4000ms / 6 * 0.15));
+  animation: breathe 4000ms infinite both;
+  animation-delay: var(--delay);
+  animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
 }
 @media (min-width: 600px) and (min-height: 299px) {
   .page-brand__logo {
@@ -2987,10 +2937,8 @@ figure figcaption cite {
   inset-inline: 0;
   background-color: var(--brand--mute);
   --weight: 350;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
   font-size: min(3vw, 0.625rem);
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   text-transform: uppercase;
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
@@ -3005,6 +2953,20 @@ figure figcaption cite {
   background-color: black;
 }
 
+@keyframes breathe {
+  30% {
+    font-variation-settings: "wght" 600;
+  }
+  32% {
+    font-variation-settings: "wght" 900;
+  }
+  55% {
+    font-variation-settings: "wght" 150;
+  }
+  100% {
+    font-variation-settings: "wght" 600;
+  }
+}
 .menu {
   position: fixed;
   inset: 0 auto auto 0;
@@ -3151,24 +3113,25 @@ figure figcaption cite {
 }
 [class*=nav__item] {
   max-width: none;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
 }
 [class*=nav__item] a:link,
 [class*=nav__item] a:visited {
   color: var(--brand--light);
   --weight: 350;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
 }
 [class*=nav__item] a:focus,
 [class*=nav__item] a:hover {
   color: white;
+  --weight: 600;
 }
 [class*=nav__item] a:active {
   color: var(--brand--light);
 }
 [class*=nav__item].is-current a {
-  background-color: var(--brand--color);
+  color: white;
+  --weight: 600;
+  pointer-events: none;
 }
 [class*=nav__item] a {
   padding: 0.5ch 1ch;
@@ -3229,11 +3192,11 @@ figure figcaption cite {
 
 .section, [class^=section--] {
   scroll-snap-align: start;
+  --weight: 350;
   margin: 41.6666666667vh 0 16.6666666667vh;
   padding: 20vh 8.3333333333vw 0;
 }
 .section .section__inner, [class^=section--] .section__inner {
-  background-image: linear-gradient(to right, #171717, rgba(255, 255, 255, 0));
   padding: 1rem;
 }
 @media (min-width: 1200px) and (min-height: 0px) {
@@ -3352,8 +3315,7 @@ figure figcaption cite {
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
-  font-style: normal;
-  font-style: normal;
+  --italic: 0;
   --weight: 400;
   -webkit-hyphens: none;
   -epub-hyphens: none;
@@ -3369,7 +3331,7 @@ figure figcaption cite {
   cursor: pointer;
   border: none;
   vertical-align: middle;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: white;
   color: var(--brand--night);
@@ -3464,8 +3426,7 @@ figure figcaption cite {
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
-  font-style: normal;
-  font-style: normal;
+  --italic: 0;
   --weight: 400;
   -webkit-hyphens: none;
   -epub-hyphens: none;
@@ -3481,7 +3442,7 @@ figure figcaption cite {
   cursor: pointer;
   border: none;
   vertical-align: middle;
-  font-family: "Noi Variable Flex Trial", sans-serif;
+  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: white;
   color: var(--brand--night);

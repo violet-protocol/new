@@ -47,13 +47,11 @@ body {
 	color: $body-color;
 	background-color: $body-background-color;
 	font-family: $font-family-body;
-	//	font-variant-ligatures: no-common-ligatures;
 	font-size: 100%;
 	@include normal;
 	line-height: $line-height;
 	@include hyphens();
 	-webkit-text-size-adjust: 100%; // prevent ios from adjusting
-	@include font-smoothing(modern);
 	text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.01); // Optional type aliasing
 }
 iframe,

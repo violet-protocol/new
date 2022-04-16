@@ -3,8 +3,12 @@
 // @FONTFACE  ###########
 
 :root {
-  --webkit-font-smoothing: subpixel-antialiased;
-  --moz-osx-font-smoothing: auto;
+  //legacy
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  //modern
+  //   --webkit-font-smoothing: subpixel-antialiased;
+  //   --moz-osx-font-smoothing: auto;
 }
 
 // RESPONSIVE FONT SIZE
@@ -27,11 +31,11 @@
 
 // ASSIGN FONT ###########
 
-$font-cursive: "Lucida Handwriting";
+$font-cursive: "";
 $font-serif: "";
-//$font-sans: "Atkinson Hyperlegible";
-$font-sans: "Noi Variable Flex Trial";
-$font-monospace: "Monaco";
+$font-sans: "Noi Variable Flex";
+$font-sans-fix: "Noi Variable Fix";
+$font-monospace: "Courier";
 $font-pattern: "";
 
 $font-family-monospace: $font-monospace, monospace;
@@ -40,7 +44,7 @@ $font-family-sans: $font-sans, sans-serif;
 $font-family-cursive: $font-cursive cursive;
 
 $font-family-body: $font-family-sans;
-$font-family-heading: $font-family-sans;
+$font-family-heading: $font-sans-fix, $font-family-sans;
 
 $font-family-nav: $font-family-heading;
 $font-family-input: $font-family-body;
@@ -49,26 +53,30 @@ $font-family-pattern: $font-pattern;
 
 // VARIABLE FONT VALUES
 
-$min-weight: 200;
+$inverse-correction: 50;
+$min-weight: 100 + $inverse-correction;
 $max-weight: 900;
+$delta-weight: $max-weight - $min-weight;
+$count-weight: 7;
+$step-weight: div($delta-weight, $count-weight - 1);
 
-$inverse-correction: -50;
+$max-italic: 10;
 
 $thin-weight: $min-weight;
-$ultralight-weight: 250;
-$light-weight: 300;
-$normal-weight: 400;
-$semibold-weight: 500;
-$bold-weight: 600;
-$ultra-weight: 700;
+$light-weight: $min-weight + $step-weight * 1;
+$regular-weight: $min-weight + $step-weight * 2;
+$semibold-weight: $min-weight + $step-weight * 3;
+$bold-weight: $min-weight + $step-weight * 4;
+$black-weight: $min-weight + $step-weight * 5;
+$ultra-weight: $max-weight;
 
-$thin-weight--inverse: $thin-weight + $inverse-correction;
-$ultralight-weight--inverse: $thin-weight + $inverse-correction;
-$light-weight--inverse: $thin-weight + $inverse-correction;
-$normal-weight--inverse: $normal-weight + $inverse-correction;
-$semibold-weight--inverse: $bold-weight + $inverse-correction;
-$bold-weight--inverse: $bold-weight + $inverse-correction;
-$ultra-weight--inverse: $ultra-weight + $inverse-correction;
+$thin-weight--inverse: $thin-weight - $inverse-correction;
+$light-weight--inverse: $thin-weight - $inverse-correction;
+$regular-weight--inverse: $regular-weight - $inverse-correction;
+$semibold-weight--inverse: $bold-weight - $inverse-correction;
+$bold-weight--inverse: $bold-weight - $inverse-correction;
+$black-weight--inverse: $black-weight - $inverse-correction;
+$ultra-weight--inverse: $ultra-weight - $inverse-correction;
 
 @mixin thin {
   --weight: #{$thin-weight};
@@ -76,25 +84,23 @@ $ultra-weight--inverse: $ultra-weight + $inverse-correction;
 @mixin thin--inverse {
   --weight: #{$thin-weight--inverse};
 }
-@mixin ultralight {
-  --weight: #{$ultralight-weight};
-}
-@mixin ultralight--inverse {
-  --weight: #{$ultralight-weight--inverse};
-}
 @mixin light {
   --weight: #{$light-weight};
 }
 @mixin light--inverse {
   --weight: #{$light-weight--inverse};
 }
+@mixin regular {
+  --weight: #{$regular-weight};
+}
+@mixin regular--inverse {
+  --weight: #{$regular-weight--inverse};
+}
 @mixin normal {
-  font-style: normal;
-  --weight: #{$normal-weight};
+  --weight: #{$regular-weight};
 }
 @mixin normal--inverse {
-  --weight: #{$normal-weight--inverse};
-  @include font-smoothing(legacy);
+  --weight: #{$regular-weight--inverse};
 }
 @mixin semibold {
   --weight: #{$semibold-weight};
@@ -108,6 +114,12 @@ $ultra-weight--inverse: $ultra-weight + $inverse-correction;
 @mixin bold--inverse {
   --weight: #{$bold-weight--inverse};
 }
+@mixin black {
+  --weight: #{$black-weight};
+}
+@mixin black--inverse {
+  --weight: #{$black-weight--inverse};
+}
 @mixin ultra {
   --weight: #{$ultra-weight};
 }
@@ -115,10 +127,10 @@ $ultra-weight--inverse: $ultra-weight + $inverse-correction;
   --weight: #{$ultra-weight--inverse};
 }
 @mixin italic {
-  font-style: italic;
+  --italic: #{$max-italic};
 }
 @mixin italic-not {
-  font-style: normal;
+  --italic: 0;
 }
 @mixin spaced {
   letter-spacing: 0.05ch;
@@ -148,54 +160,102 @@ $ultra-weight--inverse: $ultra-weight + $inverse-correction;
 
 :root {
   //check https://wakamaifondue.com/
-  --weight: #{$normal-weight};
+  --weight: #{$regular-weight};
+  --italic: 0;
   --aalt: "aalt" off;
-  --c2sc: "c2sc" off;
-  --case: "case" off;
-  --cpsp: "cpsp" off;
-  --cswh: "cswh" off;
-  --dlig: "dlig" off;
-  --dnom: "dnom" off;
-  --frac: "frac" off;
-  --hist: "hist" off;
-  --lnum: "lnum" on;
+  // --c2sc: "c2sc" off;
+  --calt: "calt" on;
+  // --case: "case" on;
+  // --cpsp: "cpsp" off;
+  // --cswh: "cswh" on;
+  // --dlig: "dlig" on;
+  // --dnom: "dnom" off;
+  // --frac: "frac" on;
+  // --hist: "hist" off;
+  // --hlig: "hlig" off;
+  // --lnum: "lnum" on;
   --kern: "kern" on;
-  --liga: "liga" on;
-  --nalt: "nalt" off;
-  --numr: "numr" off;
-  --onum: "onum" off;
-  --ordn: "ordn" off;
-  --pnum: "pnum" off;
+  // --liga: "liga" on;
+  // --locl: "locl" on;
+  // --nalt: "nalt" off;
+  // --numr: "numr" off;
+  // --onum: "onum" off;
+  // --ordn: "ordn" off;
+  // --pnum: "pnum" off;
   --salt: "salt" off;
-  --sinf: "sinf" off;
-  --smcp: "smcp" off;
-  --ss01: "ss01" on;
+  // --sinf: "sinf" off;
+  // --smcp: "smcp" off;
+  --ss01: "ss01" off;
   --ss02: "ss02" off;
   --ss03: "ss03" off;
   --ss04: "ss04" off;
   --ss05: "ss05" off;
   --ss06: "ss06" off;
-  --subs: "subs" off;
-  --sups: "sups" off;
-  --swsh: "swsh" off;
-  --titl: "titl" off;
-  --tnum: "tnum" on;
-  --zero: "zero" off;
+  --ss07: "ss07" off;
+  --ss08: "ss08" off;
+  --ss09: "ss09" off;
+  --ss10: "ss10" off;
+  // --ss11: "ss11" off;
+  // --ss12: "ss12" off;
+  // --ss13: "ss13" off;
+  // --ss14: "ss14" off;
+  // --ss15: "ss15" off;
+  // --ss16: "ss16" off;
+  // --ss17: "ss17" off;
+  // --ss18: "ss18" off;
+  // --ss19: "ss19" off;
+  // --ss20: "ss20" off;
+  // --subs: "subs" off;
+  // --sups: "sups" off;
+  // --swsh: "swsh" on;
+  // --titl: "titl" off;
+  // --tnum: "tnum" off;
+  // --zero: "zero" on;
 }
+:root {
+  // arabic
+  // --rlig: "rlig" on;
+  // --medi: "medi" on;
+  // --init: "init" on;
+  // --isol: "isol" on;
+  // --fina: "fina" on;
+  // --mark: "mark" on;
+  // --mkmk: "mkmk" on;
+}
+
 * {
+  --ss03: "ss03" on;
+  --ss06: "ss06" on;
+  --ss08: "ss08" on;
+
+  --ss02: "ss02" on;
+  --ss04: "ss04" on;
+  --ss05: "ss05" on;
+  --ss09: "ss09" on;
+  --ss10: "ss10" on;
+  --ss11: "ss11" on;
+
   font-weight: var(--weight);
-  font-variation-settings: "wght" var(--weight);
-  font-feature-settings: var(--aalt), var(--c2sc), var(--case), var(--cpsp), var(--cswh), var(--dlig), var(--dnom),
-    var(--frac), var(--hist), var(--lnum), var(--kern), var(--liga), var(--nalt), var(--numr), var(--onum), var(--ordn),
-    var(--pnum), var(--salt), var(--sinf), var(--smcp), var(--ss01), var(--ss02), var(--ss03), var(--ss04), var(--ss05),
-    var(--ss06), var(--subs), var(--sups), var(--swsh), var(--titl), var(--tnum), var(--zero);
+  font-variation-settings: "wght" var(--weight), "ital" var(--italic);
+  //font-feature-settings: var(--aalt), var(--calt), var(--case), var(--cpsp), var(--cswh), var(--dlig),
+  // var(--dnom), var(--frac), var(--hist), var(--hlig), var(--lnum), var(--kern), var(--liga), var(--locl), var(--nalt),
+  // var(--numr), var(--onum), var(--ordn), var(--pnum), var(--salt), var(--sinf), var(--smcp), var(--ss01), var(--ss02),
+  // var(--ss03), var(--ss04), var(--ss05), var(--ss06), var(--ss07), var(--ss08), var(--ss09), var(--ss10), var(--subs),
+  // var(--sups), var(--swsh), var(--titl), var(--tnum), var(--zero), var(--rlig), var(--medi), var(--init), var(--isol),
+  // var(--fina) var(--mark), var(--mkmk);
+  font-feature-settings: var(--aalt), var(--calt), var(--kern), var(--salt), var(--ss01), var(--ss02), var(--ss03),
+    var(--ss04), var(--ss05), var(--ss06), var(--ss07), var(--ss08), var(--ss09), var(--ss10);
 }
 
 h1,
 h2,
 h3 {
+  --ss02: "ss02" on;
   --ss04: "ss04" on;
   --ss05: "ss05" on;
+  --ss09: "ss09" on;
+  --ss10: "ss10" on;
+  --ss11: "ss11" on;
 }
 
 // FONT SIZE ###########
@@ -216,6 +276,7 @@ $font-size: (
   "4": min(6vw, px2rem(24)),
   "5": min(6vw, px2rem(28)),
   "6": min(6vw, px2rem(36)),
+  "7": min(6vw, px2rem(54)),
 );
 
 $fs-5: map-get($font-size, "-5");
@@ -230,6 +291,7 @@ $fs3: map-get($font-size, "3");
 $fs4: map-get($font-size, "4");
 $fs5: map-get($font-size, "5");
 $fs6: map-get($font-size, "6");
+$fs7: map-get($font-size, "7");
 
 //@for $n from -3 through 6 {
 //	.fs#{$n} {
@@ -254,69 +316,19 @@ $fs6: map-get($font-size, "6");
 //}
 
 @font-face {
-  font-family: "Roslindale";
-  src: url("../font/roslindale/roslindale-variable.woff2") format("woff2");
-  src: url("../font/roslindale/roslindale-variable.woff") format("woff");
+  font-family: "Noi Variable Fix";
+  src: url("../font/sans/NoiVariableFixTrialGX.woff2") format("woff2");
+  src: url("../font/sans/NoiVariableFixTrialGX.woff") format("woff");
   font-display: swap;
-  font-weight: 200 900;
-  font-stretch: 75 100;
-}
-
-/* atkinson-hyperlegible-regular - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* atkinson-hyperlegible-italic - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: italic;
-  font-weight: 400;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-italic.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* atkinson-hyperlegible-700 - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* atkinson-hyperlegible-700italic - latin */
-@font-face {
-  font-display: swap;
-  font-family: "Atkinson Hyperlegible";
-  font-style: italic;
-  font-weight: 700;
-  src: local(""), url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700italic.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../font/atkinson-hyperlegible/atkinson-hyperlegible-v1-latin-700italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* tinkuy-patterns-d */
-@font-face {
-  font-display: block;
-  font-family: "Tinkuy Patterns D";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""), url("../font/tinkuy-patterns/tinkuy-patterns-d.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */ url("../font/tinkuy-patterns/tinkuy-patterns-d.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-weight: 100 900;
+  font-style: 0 10;
 }
 
 @font-face {
-  font-family: "Readexpro";
-  src: url("../font/readexpro/Readexpro[HEXP,wght].woff2") format("woff2");
-  src: url("../font/readexpro/Readexpro[HEXP,wght].woff") format("woff");
+  font-family: "Noi Variable Flex";
+  src: url("../font/sans/NoiVariableFlexTrialGX.woff2") format("woff2");
+  src: url("../font/sans/NoiVariableFlexTrialGX.woff") format("woff");
   font-display: swap;
-  font-weight: 160 700;
+  font-weight: 100 900;
+  font-style: 0 10;
 }
