@@ -4,17 +4,14 @@
 
 $logo-weight: 600;
 @keyframes breathe {
-	0% {
+	40% {
 		font-variation-settings: "wght" #{$logo-weight};
-	}
-	22% {
-		font-variation-settings: "wght" #{$max-weight};
 	}
 	50% {
 		font-variation-settings: "wght" #{$min-weight};
 	}
 
-	100% {
+	60% {
 		font-variation-settings: "wght" #{$logo-weight};
 	}
 }
@@ -25,8 +22,8 @@ body {
 [data-splitting] {
 	.char {
 		$countchar: 6;
-		$duration: 4000ms;
-		--delay: calc(-1 * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.2));
+		$duration: 6000ms;
+		--delay: calc(-1 * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.1));
 		animation: breathe $duration infinite both;
 		animation-delay: var(--delay);
 		animation-timing-function: $easing;

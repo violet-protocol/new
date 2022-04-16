@@ -803,16 +803,13 @@ h3 {
 }
 
 @keyframes breathe {
-  0% {
+  40% {
     font-variation-settings: "wght" 600;
-  }
-  22% {
-    font-variation-settings: "wght" 900;
   }
   50% {
     font-variation-settings: "wght" 150;
   }
-  100% {
+  60% {
     font-variation-settings: "wght" 600;
   }
 }
@@ -821,8 +818,8 @@ body {
 }
 
 [data-splitting] .char {
-  --delay: calc(-1 * (var(--char-index) + 1) * (4000ms - 4000ms / 6 * 0.2));
-  animation: breathe 4000ms infinite both;
+  --delay: calc(-1 * (var(--char-index) + 1) * (6000ms - 6000ms / 6 * 0.1));
+  animation: breathe 6000ms infinite both;
   animation-delay: var(--delay);
   animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
 }
