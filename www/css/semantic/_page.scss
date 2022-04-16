@@ -46,21 +46,6 @@
 					font-size: $fs7;
 					@include transition;
 					transition-property: font-size;
-
-					//font-variation-settings: "wght" 600;
-
-					.char {
-						$countchar: 6;
-						$duration: 4000ms;
-						--delay: calc(-1 * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.15));
-						animation: breathe $duration infinite both;
-						animation-delay: var(--delay);
-						animation-timing-function: $easing;
-					}
-
-					&:hover span {
-						//	animation-play-state: paused;
-					}
 				}
 			}
 
@@ -122,22 +107,5 @@
 		&:hover {
 			background-color: $black;
 		}
-	}
-}
-
-$logo-weight: 600;
-@keyframes breathe {
-	30% {
-		font-variation-settings: "wght" #{$logo-weight};
-	}
-	32% {
-		font-variation-settings: "wght" #{$max-weight};
-	}
-	55% {
-		font-variation-settings: "wght" #{$min-weight};
-	}
-
-	100% {
-		font-variation-settings: "wght" #{$logo-weight};
 	}
 }

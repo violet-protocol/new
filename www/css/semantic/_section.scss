@@ -1,5 +1,12 @@
 @use "../use" as *;
 .section {
+	// [data-splitting] span {
+	// 	animation-play-state: paused;
+	// }
+	// &:hover [data-splitting] span {
+	// 	animation-play-state: running;
+	// }
+
 	scroll-snap-align: start;
 	@include normal--inverse;
 	//	mix-blend-mode: exclusion;

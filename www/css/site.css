@@ -802,6 +802,31 @@ h3 {
   --icon-color: #757575;
 }
 
+@keyframes breathe {
+  0% {
+    font-variation-settings: "wght" 600;
+  }
+  22% {
+    font-variation-settings: "wght" 900;
+  }
+  50% {
+    font-variation-settings: "wght" 150;
+  }
+  100% {
+    font-variation-settings: "wght" 600;
+  }
+}
+body {
+  cursor: crosshair;
+}
+
+[data-splitting] .char {
+  --delay: calc(-1 * (var(--char-index) + 1) * (4000ms - 4000ms / 6 * 0.2));
+  animation: breathe 4000ms infinite both;
+  animation-delay: var(--delay);
+  animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
+}
+
 .wp-block-buttons {
   background-image: linear-gradient(7deg, var(--brand--night) 0%, transparent 61.803398875%);
 }
@@ -2883,12 +2908,6 @@ figure figcaption cite {
   backface-visibility: hidden;
   transition-property: font-size;
 }
-.page-brand__logo .logogram h1 .char {
-  --delay: calc(-1 * (var(--char-index) + 1) * (4000ms - 4000ms / 6 * 0.15));
-  animation: breathe 4000ms infinite both;
-  animation-delay: var(--delay);
-  animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
-}
 @media (min-width: 600px) and (min-height: 299px) {
   .page-brand__logo {
     transform: rotate(0turn) translateY(0);
@@ -2953,20 +2972,6 @@ figure figcaption cite {
   background-color: black;
 }
 
-@keyframes breathe {
-  30% {
-    font-variation-settings: "wght" 600;
-  }
-  32% {
-    font-variation-settings: "wght" 900;
-  }
-  55% {
-    font-variation-settings: "wght" 150;
-  }
-  100% {
-    font-variation-settings: "wght" 600;
-  }
-}
 .menu {
   position: fixed;
   inset: 0 auto auto 0;

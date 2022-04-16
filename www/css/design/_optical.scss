@@ -2,6 +2,37 @@
 @use "constant" as *;
 @use "font" as *;
 
+$logo-weight: 600;
+@keyframes breathe {
+	0% {
+		font-variation-settings: "wght" #{$logo-weight};
+	}
+	22% {
+		font-variation-settings: "wght" #{$max-weight};
+	}
+	50% {
+		font-variation-settings: "wght" #{$min-weight};
+	}
+
+	100% {
+		font-variation-settings: "wght" #{$logo-weight};
+	}
+}
+
+body {
+	cursor: crosshair;
+}
+[data-splitting] {
+	.char {
+		$countchar: 6;
+		$duration: 4000ms;
+		--delay: calc(-1 * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.2));
+		animation: breathe $duration infinite both;
+		animation-delay: var(--delay);
+		animation-timing-function: $easing;
+	}
+}
+
 %has-gradient {
 	background-image: linear-gradient($angle, $brand--night 0%, transparent $phi-major * 100%);
 }
