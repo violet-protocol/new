@@ -1,9 +1,17 @@
 include www/mixin/__mixin
 doctype html
 html(lang='en' class='no-js')
-	include www/include/_head.pug
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		title Violet
+		meta(http-equiv='refresh' content='0; URL=www/index.html')
+	- var uncache= Math.ceil(Math.random()*99999999999)
+		link(href='css/site.css?v=' + uncache, rel='stylesheet')
+
 	body
 		include www/svg/svg.html
 		.page__outer
 			.page__inner
-				a(href="www/index.html") Start
+				h1
+					a(href="www/index.html") Violet
