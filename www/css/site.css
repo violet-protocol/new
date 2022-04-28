@@ -2893,9 +2893,10 @@ figure figcaption cite {
 }
 .page__inner {
   display: grid;
-  grid-template-columns: 2rem 1fr 2fr 2fr 1fr 2rem;
-  grid-template-rows: 2rem auto auto auto 2rem;
-  grid-template-areas: "top			top 					top						topvideo	topvideo 	topvideo" "left			nav 					brand					brand			white 		rightvideo" "left			nav 					heading 			heading		white 		rightvideo" "left			bottomvideo		bottomvideo		content 	content		right" "left			bottomvideo 	bottomvideo		footer 		footer		right" "bottom		bottom 				bottom				bottom 		bottom		bottom";
+  gap: 1px;
+  grid-template-columns: 6vw 1fr 2fr 2fr 1fr 6vw;
+  grid-template-rows: 6vh auto auto auto 6vh;
+  grid-template-areas: "left			top 					top						topvideo	topvideo 	topvideo" "left			nav 					brand					brand			white 		rightvideo" "left			nav 					heading 			heading		white 		rightvideo" "left			bottomvideo		bottomvideo		content 	content		right" "left			bottomvideo 	bottomvideo		footer 		footer		right" "bottom			bottom 				bottom				bottom 		bottom		right";
   min-block-size: 100vh;
 }
 .page__header {

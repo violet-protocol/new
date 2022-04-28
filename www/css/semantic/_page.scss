@@ -20,16 +20,18 @@
 		// font-size: $fs0;
 
 		display: grid;
-		$page-border: $u * 2;
-		grid-template-columns: $page-border 1fr 2fr 2fr 1fr $page-border;
-		grid-template-rows: $page-border auto auto auto $page-border;
+		gap: 1px;
+		$page-border-h: 6vw;
+		$page-border-v: 6vh;
+		grid-template-columns: $page-border-h 1fr 2fr 2fr 1fr $page-border-h;
+		grid-template-rows: $page-border-v auto auto auto $page-border-v;
 		grid-template-areas:
-			"top			top 					top						topvideo	topvideo 	topvideo"
+			"left			top 					top						topvideo	topvideo 	topvideo"
 			"left			nav 					brand					brand			white 		rightvideo"
 			"left			nav 					heading 			heading		white 		rightvideo"
 			"left			bottomvideo		bottomvideo		content 	content		right"
 			"left			bottomvideo 	bottomvideo		footer 		footer		right"
-			"bottom		bottom 				bottom				bottom 		bottom		bottom";
+			"bottom			bottom 				bottom				bottom 		bottom		right";
 
 		min-block-size: 100vh;
 	}
