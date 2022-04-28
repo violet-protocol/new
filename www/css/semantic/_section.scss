@@ -1,5 +1,11 @@
 @use "../use" as *;
 .section {
+	&__content {
+		@extend %grid;
+		grid-area: content;
+		background-color: $white;
+		padding: 0 $u * 2;
+	}
 	// [data-splitting] span {
 	// 	animation-play-state: paused;
 	// }
@@ -7,38 +13,38 @@
 	// 	animation-play-state: running;
 	// }
 
-	scroll-snap-align: start;
-	@include normal--inverse;
-	//	mix-blend-mode: exclusion;
-	.section__inner {
-		//	background-image: linear-gradient(to right, $pitch, $transparent);
-		padding: $u;
-		@include mq(large) {
-			inline-size: max-content;
-			padding-inline-start: calc((1vw * #{$f--12}) + $u2);
-		}
-	}
-	margin: (5vh * $f--12) 0 (2vh * $f--12);
-	padding: 20vh (1vw * $f--12) 0;
-	@include mq(medium) {
-		padding: 20vh (2vw * $f--12);
-	}
-	@include mq(large) {
-		min-inline-size: 100vw;
-		margin-block-start: 50vh;
-		padding-block: 0;
-		padding-inline-start: 0;
-		padding-inline-end: 0;
-		overflow: auto;
-	}
-	&:first-of-type {
-		margin-block-start: 100vh;
-		@include mq(large) {
-			margin-block-start: 50vh;
-		}
-	}
-}
+	// 	scroll-snap-align: start;
+	// 	@include normal--inverse;
+	// 	//	mix-blend-mode: exclusion;
+	// 	.section__inner {
+	// 		//	background-image: linear-gradient(to right, $pitch, $transparent);
+	// 		padding: $u;
+	// 		@include mq(large) {
+	// 			inline-size: max-content;
+	// 			padding-inline-start: calc((1vw * #{$f--12}) + $u2);
+	// 		}
+	// 	}
+	// 	margin: (5vh * $f--12) 0 (2vh * $f--12);
+	// 	padding: 20vh (1vw * $f--12) 0;
+	// 	@include mq(medium) {
+	// 		padding: 20vh (2vw * $f--12);
+	// 	}
+	// 	@include mq(large) {
+	// 		min-inline-size: 100vw;
+	// 		margin-block-start: 50vh;
+	// 		padding-block: 0;
+	// 		padding-inline-start: 0;
+	// 		padding-inline-end: 0;
+	// 		overflow: auto;
+	// 	}
+	// 	&:first-of-type {
+	// 		margin-block-start: 100vh;
+	// 		@include mq(large) {
+	// 			margin-block-start: 50vh;
+	// 		}
+	// 	}
+	// }
 
-[class^="section--"] {
-	@extend .section;
+	// [class^="section--"] {
+	// 	@extend .section;
 }

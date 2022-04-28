@@ -97,18 +97,18 @@ $highlight-background-color: hsl(#{var(--brand-h)}, 100%, 82%);
 $highlight-color: hsl(#{var(--brand-h)}, 30%, 30%);
 
 // ASSIGN COLOR ###########
-$body-color: $white;
+$body-color: $pitch;
 $body-background-color: $brand--night;
 $header-background-color: $body-background-color;
-$link-color: $brand--light;
+$link-color: $brand--color;
 $link-background-color: $white;
 $link-color-hover: $brand--color;
 $link-background-color-hover: $white;
 $link-color-visited: none;
 $link-color-active: $link-color;
 $icon-color: $link-color;
-$cta-color: $brand--night;
-$cta-background-color: $white;
+$cta-color: $white;
+$cta-background-color: $brand--color;
 $cta-color-hover: $cta-color;
 $cta-background-color-hover: $brand--light;
 

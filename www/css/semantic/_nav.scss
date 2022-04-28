@@ -7,13 +7,12 @@
 	a:link,
 	a:visited {
 		color: $link-color;
-		@include normal--inverse;
+		@include normal;
 	}
 
 	a:focus,
 	a:hover {
-		color: $white;
-		@include bold--inverse;
+		@include bold;
 	}
 
 	a:active {
@@ -26,18 +25,18 @@
 		pointer-events: none;
 	}
 	a {
-		padding: 0.5ch 1ch;
+		padding: 0.5ch 1ch 0 0;
 	}
 }
 
 [class*="nav__list"] {
 	@include list--reset;
-	@include flex;
-	--flex-gap: #{$u2};
-	text-align: end;
-	flex-flow: column nowrap;
-	> * {
-	}
+	// @include flex;
+	// --flex-gap: #{$u2};
+	// text-align: end;
+	// flex-flow: column nowrap;
+	// > * {
+	// }
 }
 
 [class*="nav__item"] {
@@ -54,25 +53,31 @@
 		}
 	}
 	&--document {
-		position: fixed;
-		z-index: z(fixed);
-		inset-block-start: calc(20vh - 2em);
-		@include mq(medium) {
-			inset-inline-start: (2vw * $f--12);
-		}
-		@include mq(large) {
-			inset-block-start: calc(50vh - 2em);
-			inset-inline-start: div(100vw, 12);
-		}
-		.nav__list {
-			flex-flow: row wrap;
-		}
+		@extend %grid;
+		grid-area: nav;
+		background-color: $white;
+		padding: $u * 2;
+		// position: fixed;
+		// z-index: z(fixed);
+		// inset-block-start: calc(20vh - 2em);
+		// @include mq(medium) {
+		// 	inset-inline-start: (2vw * $f--12);
+		// }
+		// @include mq(large) {
+		// 	inset-block-start: calc(50vh - 2em);
+		// 	inset-inline-start: div(100vw, 12);
+		// }
+		// .nav__list {
+		// 	flex-flow: row wrap;
+		// }
 	}
 	&--collateral {
 		.nav__list {
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: start;
+			padding: $u $u * 2;
+			font-size: $fs-2;
 		}
 	}
 }

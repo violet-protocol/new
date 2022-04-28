@@ -149,3 +149,45 @@ abbr[title],
 	font-family: $font-family-body;
 	@include normal--inverse;
 }
+
+%grid {
+	background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"),
+		url("../image/grid.png");
+	background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
+}
+
+.spacer {
+	@extend %grid;
+	background-color: $bright;
+	//	mix-blend-mode: luminosity;
+	&:nth-of-type(1) {
+		grid-area: topvideo;
+		background-color: $transparent;
+	}
+	&:nth-of-type(2) {
+		grid-area: rightvideo;
+		background-color: $transparent;
+	}
+	&:nth-of-type(3) {
+		grid-area: bottomvideo;
+		background-color: $transparent;
+	}
+	&:nth-of-type(4) {
+		grid-area: top;
+	}
+	&:nth-of-type(5) {
+		grid-area: right;
+	}
+	&:nth-of-type(6) {
+		grid-area: left;
+	}
+	&:nth-of-type(7) {
+		grid-area: bottom;
+	}
+	&:nth-of-type(8) {
+		grid-area: white;
+		background-color: $white;
+		mix-blend-mode: unset;
+		opacity: 1;
+	}
+}

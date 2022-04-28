@@ -530,11 +530,11 @@ template {
 }
 
 .background-color-cta {
-  background-color: var(--brand--night);
+  background-color: white;
 }
 
 .color-cta {
-  color: var(--brand--night);
+  color: white;
 }
 
 .background-color-admin {
@@ -949,6 +949,45 @@ abbr[title],
   text-transform: uppercase;
   font-family: "Noi Variable Flex", sans-serif;
   --weight: 350;
+}
+
+.nav--document, .section__content, .page__heading, .page-brand, .page-footer, .spacer {
+  background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png");
+  background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
+}
+
+.spacer {
+  background-color: #c7c7c7;
+}
+.spacer:nth-of-type(1) {
+  grid-area: topvideo;
+  background-color: rgba(255, 255, 255, 0);
+}
+.spacer:nth-of-type(2) {
+  grid-area: rightvideo;
+  background-color: rgba(255, 255, 255, 0);
+}
+.spacer:nth-of-type(3) {
+  grid-area: bottomvideo;
+  background-color: rgba(255, 255, 255, 0);
+}
+.spacer:nth-of-type(4) {
+  grid-area: top;
+}
+.spacer:nth-of-type(5) {
+  grid-area: right;
+}
+.spacer:nth-of-type(6) {
+  grid-area: left;
+}
+.spacer:nth-of-type(7) {
+  grid-area: bottom;
+}
+.spacer:nth-of-type(8) {
+  grid-area: white;
+  background-color: white;
+  mix-blend-mode: unset;
+  opacity: 1;
 }
 
 @media (min-width: 600px) and (min-height: 299px) {
@@ -1538,8 +1577,8 @@ abbr[title],
   vertical-align: middle;
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
-  background-color: white;
-  color: var(--brand--night);
+  background-color: var(--brand--color);
+  color: white;
   text-decoration: none;
   text-transform: none;
 }
@@ -1550,11 +1589,11 @@ abbr[title],
   }
 }
 .cta:visited {
-  color: var(--brand--night);
+  color: white;
 }
 .cta:hover, .cta:visited:hover {
   background-color: var(--brand--light);
-  color: var(--brand--night);
+  color: white;
 }
 .cta:focus, .cta:visited:focus {
   background-color: var(--brand--light);
@@ -1612,7 +1651,7 @@ html {
 }
 
 body {
-  color: white;
+  color: #171717;
   background-color: var(--brand--night);
   font-family: "Noi Variable Flex", sans-serif;
   font-size: 100%;
@@ -1734,7 +1773,7 @@ article ol:not([class]) li:not([class]) a:not([class]):hover {
 
 a {
   text-decoration: none;
-  color: var(--brand--light);
+  color: var(--brand--color);
   cursor: pointer;
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
@@ -1746,11 +1785,11 @@ a {
   }
 }
 a:active {
-  color: var(--brand--light);
+  color: var(--brand--color);
   outline: none;
 }
 a:focus {
-  color: var(--brand--light);
+  color: var(--brand--color);
   outline: none;
 }
 
@@ -2002,8 +2041,8 @@ button {
   vertical-align: middle;
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
-  background-color: white;
-  color: var(--brand--night);
+  background-color: var(--brand--color);
+  color: white;
   text-decoration: none;
   text-transform: none;
   box-shadow: none;
@@ -2016,11 +2055,11 @@ button {
   }
 }
 button:visited {
-  color: var(--brand--night);
+  color: white;
 }
 button:hover, button:visited:hover {
   background-color: var(--brand--light);
-  color: var(--brand--night);
+  color: white;
 }
 button:focus, button:visited:focus {
   background-color: var(--brand--light);
@@ -2327,7 +2366,7 @@ pre {
 
 /* Allow line wrapping of 'pre' */
 ins {
-  color: white;
+  color: #171717;
 }
 
 h1,
@@ -2456,7 +2495,7 @@ strike {
 }
 
 ins {
-  color: white;
+  color: #171717;
   text-decoration: underline;
 }
 
@@ -2490,7 +2529,7 @@ summary::-webkit-details-marker {
 summary {
   display: block;
   cursor: pointer;
-  color: var(--brand--light);
+  color: var(--brand--color);
 }
 summary:before {
   display: inline-block;
@@ -2858,115 +2897,53 @@ figure figcaption cite {
 
 .page__outer {
   position: relative;
-  display: flex;
-  gap: 0;
-  flex-direction: column;
-}
-.page__outer > * {
-  flex: 0 0 auto;
 }
 .page__inner {
-  position: relative;
-  max-inline-size: 2881.5px;
-  inline-size: 100%;
-  margin: auto;
-  font-size: min(4vw, 1rem);
+  display: grid;
+  grid-template-columns: 3rem 1fr 2fr 2fr 1fr 3rem;
+  grid-template-rows: 3rem auto auto auto 3rem;
+  grid-template-areas: "top			top 					top						topvideo	topvideo 	topvideo" "left			nav 					brand					brand			white 		rightvideo" "left			nav 					heading 			heading		white 		rightvideo" "left			bottomvideo		bottomvideo		content 	content		right" "left			bottomvideo 	bottomvideo		footer 		footer		right" "bottom		bottom 				bottom				bottom 		bottom		bottom";
+  min-block-size: 100vh;
+}
+.page__heading {
+  grid-area: heading;
+  background-color: white;
+  margin: 0;
+  font-size: min(9vw, 7.5rem);
+  padding: 1rem;
+  text-align: center;
 }
 .page-header {
-  mix-blend-mode: difference;
+  display: contents;
+}
+.page-brand {
+  grid-area: brand;
+  background-color: white;
   display: flex;
-  align-items: flex-start;
-  position: fixed;
-  top: 0;
-  z-index: 1400;
-  inline-size: 100%;
-  max-inline-size: 2881.5px;
-  margin: auto;
-  padding: 0.5rem;
-}
-.page-header a {
-  color: white;
-}
-.page-brand__logo {
-  transform: rotate(-0.25turn) translateY(-18vw);
-  transform-origin: top right;
-  transition: all 1s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition-property: opacity transform;
+  flex-direction: column;
+  justify-content: center;
 }
 .page-brand__logo .logogram {
-  color: white;
+  color: var(--brand--color);
 }
 .page-brand__logo .logogram h1 {
-  font-size: min(6vw, 3.375rem);
+  font-size: min(6vw, 2.25rem);
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition-property: font-size;
-}
-@media (min-width: 600px) and (min-height: 299px) {
-  .page-brand__logo {
-    transform: rotate(0turn) translateY(0);
-  }
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .page-brand__logo {
-    transform: rotate(0turn) translateX(8.3333333333vw) translateY(16.6666666667vh);
-  }
-}
-.page-brand__logo:hover {
-  opacity: 1;
-}
-.page-brand__logo svg {
-  transition: all 1s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition-property: inline-size block-size;
-  color: white;
-  inline-size: 16.6666666667vw;
-  block-size: 6rem;
-  object-fit: contain;
-}
-@media (min-width: 600px) and (min-height: 299px) {
-  .page-brand__logo svg {
-    inline-size: 10vw;
-  }
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .page-brand__logo svg {
-    inline-size: 200px;
-  }
+  text-align: center;
 }
 .page-main {
-  max-inline-size: 2881.5px;
-  margin: auto;
-}
-.page-menu {
-  inline-size: 100%;
+  display: contents;
 }
 .page-footer {
-  margin: auto;
-  padding: 1rem;
-  position: fixed;
-  inset-block-end: 0;
-  inset-inline: 0;
-  background-color: var(--brand--mute);
-  --weight: 350;
-  font-size: min(3vw, 0.625rem);
-  font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
-  text-transform: uppercase;
-  transition: all 1s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .page-footer {
-    inset-inline-start: calc(8.3333333333vw - 1rem);
-  }
-}
-.page-footer:hover {
-  background-color: black;
+  grid-area: footer;
+  background-color: white;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .menu {
@@ -3087,14 +3064,6 @@ figure figcaption cite {
   margin: 0;
   padding: 0;
   background-color: unset;
-  --flex-gap: 0.25rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: var(--flex-gap);
-  --flex-gap: 0.5rem;
-  text-align: end;
-  flex-flow: column nowrap;
 }
 [class*=nav__list] li {
   background-color: inherit;
@@ -3108,27 +3077,22 @@ figure figcaption cite {
 [class*=nav__list] li:nth-child(1n):before, [class*=nav__list] li:nth-child(1n):after {
   content: unset;
 }
-[class*=nav__list] > * {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: auto;
-}
+
 [class*=nav__item] {
   max-width: none;
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
 }
 [class*=nav__item] a:link,
 [class*=nav__item] a:visited {
-  color: var(--brand--light);
-  --weight: 350;
+  color: var(--brand--color);
+  --weight: 400;
 }
 [class*=nav__item] a:focus,
 [class*=nav__item] a:hover {
-  color: white;
-  --weight: 600;
+  --weight: 650;
 }
 [class*=nav__item] a:active {
-  color: var(--brand--light);
+  color: var(--brand--color);
 }
 [class*=nav__item].is-current a {
   color: white;
@@ -3136,7 +3100,7 @@ figure figcaption cite {
   pointer-events: none;
 }
 [class*=nav__item] a {
-  padding: 0.5ch 1ch;
+  padding: 0.5ch 1ch 0 0;
 }
 
 .nav--main {
@@ -3147,28 +3111,16 @@ figure figcaption cite {
   pointer-events: none;
 }
 .nav--document {
-  position: fixed;
-  z-index: 1400;
-  inset-block-start: calc(20vh - 2em);
-}
-@media (min-width: 600px) and (min-height: 299px) {
-  .nav--document {
-    inset-inline-start: 16.6666666667vw;
-  }
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .nav--document {
-    inset-block-start: calc(50vh - 2em);
-    inset-inline-start: 8.3333333333vw;
-  }
-}
-.nav--document .nav__list {
-  flex-flow: row wrap;
+  grid-area: nav;
+  background-color: white;
+  padding: 2rem;
 }
 .nav--collateral .nav__list {
   display: flex;
   flex-flow: row wrap;
   justify-content: start;
+  padding: 1rem 2rem;
+  font-size: min(3vw, 0.75rem);
 }
 
 .background {
@@ -3192,43 +3144,10 @@ figure figcaption cite {
   }
 }
 
-.section, [class^=section--] {
-  scroll-snap-align: start;
-  --weight: 350;
-  margin: 41.6666666667vh 0 16.6666666667vh;
-  padding: 20vh 8.3333333333vw 0;
-}
-.section .section__inner, [class^=section--] .section__inner {
-  padding: 1rem;
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .section .section__inner, [class^=section--] .section__inner {
-    inline-size: max-content;
-    padding-inline-start: calc((1vw * 8.3333333333) + 0.5rem);
-  }
-}
-@media (min-width: 600px) and (min-height: 299px) {
-  .section, [class^=section--] {
-    padding: 20vh 16.6666666667vw;
-  }
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .section, [class^=section--] {
-    min-inline-size: 100vw;
-    margin-block-start: 50vh;
-    padding-block: 0;
-    padding-inline-start: 0;
-    padding-inline-end: 0;
-    overflow: auto;
-  }
-}
-.section:first-of-type, [class^=section--]:first-of-type {
-  margin-block-start: 100vh;
-}
-@media (min-width: 1200px) and (min-height: 0px) {
-  .section:first-of-type, [class^=section--]:first-of-type {
-    margin-block-start: 50vh;
-  }
+.section__content {
+  grid-area: content;
+  background-color: white;
+  padding: 0 2rem;
 }
 
 .text {
@@ -3335,11 +3254,11 @@ figure figcaption cite {
   vertical-align: middle;
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
-  background-color: white;
-  color: var(--brand--night);
+  background-color: var(--brand--color);
+  color: white;
   text-decoration: none;
   text-transform: none;
-  color: var(--brand--night);
+  color: white;
   margin: 1rem;
 }
 @supports not (padding-inline: 0) {
@@ -3349,11 +3268,11 @@ figure figcaption cite {
   }
 }
 .wp-block-button__link:visited {
-  color: var(--brand--night);
+  color: white;
 }
 .wp-block-button__link:hover, .wp-block-button__link:visited:hover {
   background-color: var(--brand--light);
-  color: var(--brand--night);
+  color: white;
 }
 .wp-block-button__link:focus, .wp-block-button__link:visited:focus {
   background-color: var(--brand--light);
@@ -3446,8 +3365,8 @@ figure figcaption cite {
   vertical-align: middle;
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
-  background-color: white;
-  color: var(--brand--night);
+  background-color: var(--brand--color);
+  color: white;
   text-decoration: none;
   text-transform: none;
 }
@@ -3458,11 +3377,11 @@ figure figcaption cite {
   }
 }
 .tml-links .tml-register-link a:visited {
-  color: var(--brand--night);
+  color: white;
 }
 .tml-links .tml-register-link a:hover, .tml-links .tml-register-link a:visited:hover {
   background-color: var(--brand--light);
-  color: var(--brand--night);
+  color: white;
 }
 .tml-links .tml-register-link a:focus, .tml-links .tml-register-link a:visited:focus {
   background-color: var(--brand--light);

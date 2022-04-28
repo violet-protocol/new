@@ -66,7 +66,8 @@
 				max-width: none;
 				height: 100%;
 				background-color: $white;
-				transition: none;
+				@include transition;
+				transition-property: background-color;
 				min-height: 2em;
 				padding: $stroke $u $stroke $stroke;
 				display: grid;
@@ -74,6 +75,8 @@
 				grid-template-columns: 2fr 10fr;
 				align-items: center;
 				&::before {
+					@include transition;
+					transition-property: background-color;
 					display: grid;
 					place-content: center;
 					background-color: $brand--night;

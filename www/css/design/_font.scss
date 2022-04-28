@@ -276,7 +276,7 @@ $font-size: (
   "4": min(6vw, px2rem(24)),
   "5": min(6vw, px2rem(28)),
   "6": min(6vw, px2rem(36)),
-  "7": min(6vw, px2rem(54)),
+  "7": min(9vw, px2rem(120)),
 );
 
 $fs-5: map-get($font-size, "-5");
