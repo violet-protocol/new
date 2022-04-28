@@ -228,12 +228,12 @@ $ultra-weight--inverse: $ultra-weight - $inverse-correction;
   --ss06: "ss06" on;
   --ss08: "ss08" on;
 
-  --ss02: "ss02" on;
-  --ss04: "ss04" on;
-  --ss05: "ss05" on;
-  --ss09: "ss09" on;
-  --ss10: "ss10" on;
-  --ss11: "ss11" on;
+  //  --ss02: "ss02" on;
+  //  --ss04: "ss04" on;
+  //  --ss05: "ss05" on;
+  //  --ss09: "ss09" on;
+  // --ss10: "ss10" on;
+  //  --ss11: "ss11" on;
 
   font-weight: var(--weight);
   font-variation-settings: "wght" var(--weight), "ital" var(--italic);
@@ -254,7 +254,7 @@ h3 {
   --ss04: "ss04" on;
   --ss05: "ss05" on;
   --ss09: "ss09" on;
-  --ss10: "ss10" on;
+  //--ss10: "ss10" on;
   --ss11: "ss11" on;
 }
 
