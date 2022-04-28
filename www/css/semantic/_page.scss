@@ -20,7 +20,7 @@
 		// font-size: $fs0;
 
 		display: grid;
-		$page-border: $u * 3;
+		$page-border: $u * 2;
 		grid-template-columns: $page-border 1fr 2fr 2fr 1fr $page-border;
 		grid-template-rows: $page-border auto auto auto $page-border;
 		grid-template-areas:
@@ -70,6 +70,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		padding: $u;
 
 		&__logo {
 			//	opacity: 0.8;
