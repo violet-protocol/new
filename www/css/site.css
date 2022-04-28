@@ -2893,7 +2893,6 @@ figure figcaption cite {
 }
 .page__inner {
   display: grid;
-  gap: 1px;
   grid-template-columns: 6vw 1fr 2fr 2fr 1fr 6vw;
   grid-template-rows: 6vh auto auto auto 6vh;
   grid-template-areas: "left			top 					top						topvideo	topvideo 	topvideo" "left			nav 					brand					brand			white 		rightvideo" "left			nav 					heading 			heading		white 		rightvideo" "left			bottomvideo		bottomvideo		content 	content		right" "left			bottomvideo 	bottomvideo		footer 		footer		right" "bottom			bottom 				bottom				bottom 		bottom		right";
