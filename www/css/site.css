@@ -1543,7 +1543,7 @@ abbr[title],
 .cta {
   user-select: none;
   display: inline-block;
-  padding-inline: 0.5rem;
+  padding: 0.25rem 0.5rem;
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
@@ -1566,26 +1566,20 @@ abbr[title],
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: var(--brand--color);
+  border-radius: 0.25rem;
   color: white;
   text-decoration: none;
   text-transform: none;
-}
-@supports not (padding-inline: 0) {
-  .cta {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
 }
 .cta:visited {
   color: white;
 }
 .cta:hover, .cta:visited:hover {
-  background-color: var(--brand--light);
-  color: white;
+  --weight: 650;
 }
 .cta:focus, .cta:visited:focus {
   background-color: var(--brand--light);
-  color: var(--brand--mute);
+  color: white;
 }
 .cta [class*=icon] {
   width: 2rem;
@@ -2007,7 +2001,7 @@ textarea:focus {
 button {
   user-select: none;
   display: inline-block;
-  padding-inline: 0.5rem;
+  padding: 0.25rem 0.5rem;
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
@@ -2030,28 +2024,22 @@ button {
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: var(--brand--color);
+  border-radius: 0.25rem;
   color: white;
   text-decoration: none;
   text-transform: none;
   box-shadow: none;
   width: auto;
 }
-@supports not (padding-inline: 0) {
-  button {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
 button:visited {
   color: white;
 }
 button:hover, button:visited:hover {
-  background-color: var(--brand--light);
-  color: white;
+  --weight: 650;
 }
 button:focus, button:visited:focus {
   background-color: var(--brand--light);
-  color: var(--brand--mute);
+  color: white;
 }
 button [class*=icon] {
   width: 2rem;
@@ -3222,7 +3210,7 @@ figure figcaption cite {
   all: unset;
   user-select: none;
   display: inline-block;
-  padding-inline: 0.5rem;
+  padding: 0.25rem 0.5rem;
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
@@ -3245,28 +3233,22 @@ figure figcaption cite {
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: var(--brand--color);
+  border-radius: 0.25rem;
   color: white;
   text-decoration: none;
   text-transform: none;
   color: white;
   margin: 1rem;
 }
-@supports not (padding-inline: 0) {
-  .wp-block-button__link {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-}
 .wp-block-button__link:visited {
   color: white;
 }
 .wp-block-button__link:hover, .wp-block-button__link:visited:hover {
-  background-color: var(--brand--light);
-  color: white;
+  --weight: 650;
 }
 .wp-block-button__link:focus, .wp-block-button__link:visited:focus {
   background-color: var(--brand--light);
-  color: var(--brand--mute);
+  color: white;
 }
 .wp-block-button__link [class*=icon] {
   width: 2rem;
@@ -3333,7 +3315,7 @@ figure figcaption cite {
 .tml-links .tml-register-link a {
   user-select: none;
   display: inline-block;
-  padding-inline: 0.5rem;
+  padding: 0.25rem 0.5rem;
   position: relative;
   max-width: 55ch;
   font-size: min(4vw, 1rem);
@@ -3356,26 +3338,20 @@ figure figcaption cite {
   font-family: "Noi Variable Fix", "Noi Variable Flex", sans-serif;
   cursor: pointer;
   background-color: var(--brand--color);
+  border-radius: 0.25rem;
   color: white;
   text-decoration: none;
   text-transform: none;
-}
-@supports not (padding-inline: 0) {
-  .tml-links .tml-register-link a {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
 }
 .tml-links .tml-register-link a:visited {
   color: white;
 }
 .tml-links .tml-register-link a:hover, .tml-links .tml-register-link a:visited:hover {
-  background-color: var(--brand--light);
-  color: white;
+  --weight: 650;
 }
 .tml-links .tml-register-link a:focus, .tml-links .tml-register-link a:visited:focus {
   background-color: var(--brand--light);
-  color: var(--brand--mute);
+  color: white;
 }
 .tml-links .tml-register-link a [class*=icon] {
   width: 2rem;

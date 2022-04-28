@@ -3,11 +3,7 @@
 @mixin cta {
 	user-select: none;
 	display: inline-block;
-	padding-inline: $u2;
-	@supports not (padding-inline: 0) {
-		padding-left: $u2;
-		padding-right: $u2;
-	}
+	padding: $u4 $u2;
 	position: relative;
 	max-width: $line-width;
 	font-size: $fs0;
@@ -24,6 +20,7 @@
 	//	@include uppercase;
 	cursor: pointer;
 	background-color: $cta-background-color;
+	border-radius: $radius;
 	color: $cta-color;
 	text-decoration: none;
 	text-transform: none;
@@ -32,13 +29,12 @@
 	}
 	&:hover,
 	&:visited:hover {
-		background-color: $cta-background-color-hover;
-		color: $cta-color-hover;
+		@include bold;
 	}
 	&:focus,
 	&:visited:focus {
-		background-color: $brand--light;
-		color: $brand--mute;
+		background-color: $cta-background-color-hover;
+		color: $cta-color-hover;
 	}
 	[class*="icon"] {
 		$s: $u * 2;
