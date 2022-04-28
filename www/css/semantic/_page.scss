@@ -33,17 +33,21 @@
 
 		min-block-size: 100vh;
 	}
-	&__heading {
+	&__header {
 		@extend %grid;
 		grid-area: heading;
 		background-color: $white;
-		margin: 0;
-		font-size: $fs7;
 		padding: $u;
-		text-align: center;
+	}
+	&__heading {
+		text-align: start;
+		max-width: 5em;
+		margin: 0 auto;
+		font-size: $fs7;
+		line-height: 0.8;
 	}
 	&-header {
-		display: contents;
+		//		display: contents;
 		//	mix-blend-mode: difference;
 		// display: flex;
 		// align-items: flex-start;

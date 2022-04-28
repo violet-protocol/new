@@ -944,7 +944,7 @@ abbr[title],
   --weight: 350;
 }
 
-.nav--document, .section__content, .page__heading, .page-brand, .page-footer, .spacer {
+.nav--document, .section__content, .page__header, .page-brand, .page-footer, .spacer {
   background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png");
   background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
 }
@@ -2898,16 +2898,17 @@ figure figcaption cite {
   grid-template-areas: "top			top 					top						topvideo	topvideo 	topvideo" "left			nav 					brand					brand			white 		rightvideo" "left			nav 					heading 			heading		white 		rightvideo" "left			bottomvideo		bottomvideo		content 	content		right" "left			bottomvideo 	bottomvideo		footer 		footer		right" "bottom		bottom 				bottom				bottom 		bottom		bottom";
   min-block-size: 100vh;
 }
-.page__heading {
+.page__header {
   grid-area: heading;
   background-color: white;
-  margin: 0;
-  font-size: min(9vw, 7.5rem);
   padding: 1rem;
-  text-align: center;
 }
-.page-header {
-  display: contents;
+.page__heading {
+  text-align: start;
+  max-width: 5em;
+  margin: 0 auto;
+  font-size: min(9vw, 7.5rem);
+  line-height: 0.8;
 }
 .page-brand {
   grid-area: brand;

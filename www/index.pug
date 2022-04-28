@@ -16,9 +16,11 @@ html(lang='en' class='no-js')
 				b.spacer
 				b.spacer
 				b.spacer
-				include include/_page-header.pug 
+				include include/_page-brand.pug 
+				include include/_nav--document.pug 
 				main.page-main 
-					h2(data-splitting).page__heading We Evolve Trust
+					header.page__header  
+						h2(data-splitting).page__heading We Evolve Trust
 					section.section__content
 						p Violet is a new identity protocol built on Ethereum to connect on-chain with verified off-chain identities and serve as an orchestration platform for authentication and authorization against other protocols and applications.
 						a.cta(href="#") Learn more
