@@ -944,11 +944,6 @@ abbr[title],
   --weight: 350;
 }
 
-.nav--document, .section__content, .page__header, .page-brand, .page-footer, .spacer {
-  background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png");
-  background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
-}
-
 .spacer {
   background-color: #c7c7c7;
 }
