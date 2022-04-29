@@ -3,7 +3,7 @@
 @use "font" as *;
 
 $logo-weight: 600;
-@keyframes breathe {
+@keyframes breatheweight {
 	40% {
 		font-variation-settings: "wght" #{$logo-weight};
 	}
@@ -16,6 +16,18 @@ $logo-weight: 600;
 	}
 }
 
+@keyframes breathebackground {
+	0% {
+		background-color: $accent--color;
+	}
+	50% {
+		background-color: $transparent;
+	}
+	80% {
+		background-color: $accent--color;
+	}
+}
+
 body {
 	cursor: crosshair;
 }
@@ -23,8 +35,8 @@ body {
 	.char {
 		$countchar: 6;
 		$duration: 6000ms;
-		--delay: calc(-1 * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.1));
-		animation: breathe $duration infinite both;
+		--delay: calc(-1ms * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.1));
+		animation: breatheweight $duration infinite both;
 		animation-delay: var(--delay);
 		animation-timing-function: $easing;
 	}
@@ -151,43 +163,24 @@ abbr[title],
 }
 
 %grid {
-	// background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"),
-	// 	url("../image/grid.png");
-	// background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
+	background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"),
+		url("../image/grid.png");
+	background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
 }
 
 .spacer {
 	@extend %grid;
-	background-color: $bright;
-	//	mix-blend-mode: luminosity;
-	&:nth-of-type(1) {
-		grid-area: topvideo;
-		background-color: $transparent;
-	}
-	&:nth-of-type(2) {
-		grid-area: rightvideo;
-		background-color: $transparent;
-	}
-	&:nth-of-type(3) {
-		grid-area: bottomvideo;
-		background-color: $transparent;
-	}
-	&:nth-of-type(4) {
-		grid-area: top;
-	}
-	&:nth-of-type(5) {
-		grid-area: right;
-	}
-	&:nth-of-type(6) {
-		grid-area: left;
-	}
-	&:nth-of-type(7) {
-		grid-area: bottom;
-	}
-	&:nth-of-type(8) {
-		grid-area: white;
-		background-color: $white;
-		mix-blend-mode: unset;
-		opacity: 1;
+	background-color: $accent--color;
+	//mix-blend-mode: luminosity;
+	--delay: 0ms;
+	$duration: 20000ms;
+	animation: breathebackground $duration infinite both;
+	animation-delay: var(--delay);
+	animation-timing-function: $easing;
+	$spacer: 24;
+	@for $j from 1 through $spacer {
+		&:nth-of-type(#{$j}) {
+			--delay: calc(-1 * #{$j} * #{$duration} / #{$spacer});
+		}
 	}
 }

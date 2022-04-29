@@ -20,18 +20,18 @@
 		// font-size: $fs0;
 
 		display: grid;
-		//gap: 1px;
+		gap: 1px;
 		$page-border-h: 6vw;
 		$page-border-v: 6vh;
 		grid-template-columns: $page-border-h 1fr 2fr 2fr 1fr $page-border-h;
-		grid-template-rows: $page-border-v auto auto auto $page-border-v;
+		grid-template-rows: $page-border-v auto auto auto auto $page-border-v;
 		grid-template-areas:
-			"left			top 					top						topvideo	topvideo 	topvideo"
-			"left			nav 					brand					brand			white 		rightvideo"
-			"left			nav 					heading 			heading		white 		rightvideo"
-			"left			bottomvideo		bottomvideo		content 	content		right"
-			"left			bottomvideo 	bottomvideo		footer 		footer		right"
-			"bottom			bottom 				bottom				bottom 		bottom		right";
+			".			. 						.							.				. 			."
+			".			main 					brand					brand			cta 		."
+			".			external 			heading 			heading		. 	."
+			".			. 						heading 			heading		. 	."
+			".			collateral						.						content 	content	."
+			".			.					.								. 				.				.";
 
 		min-block-size: 100vh;
 	}
@@ -43,10 +43,9 @@
 	}
 	&__heading {
 		text-align: start;
-		max-width: 5em;
-		margin: 0 auto;
+		max-width: 7em;
 		font-size: $fs7;
-		line-height: 0.8;
+		line-height: 0.85;
 	}
 	&-header {
 		//		display: contents;
@@ -69,11 +68,10 @@
 		@extend %grid;
 		grid-area: brand;
 		background-color: $white;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		display: grid;
 		padding: $u;
-
+		display: grid;
+		align-content: center;
 		&__logo {
 			//	opacity: 0.8;
 
@@ -83,7 +81,7 @@
 					font-size: $fs6;
 					@include transition;
 					transition-property: font-size;
-					text-align: center;
+					margin: 0;
 				}
 			}
 

@@ -4,7 +4,15 @@
 		@extend %grid;
 		grid-area: content;
 		background-color: $white;
-		padding: 0 $u * 2;
+		padding: $u;
+	}
+	&__cta {
+		@extend %grid;
+		grid-area: cta;
+		background-color: $white;
+		padding: $u;
+		display: grid;
+		place-items: center;
 	}
 	// [data-splitting] span {
 	// 	animation-play-state: paused;

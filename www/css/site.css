@@ -506,11 +506,11 @@ template {
 }
 
 .background-color-mediocre {
-  background-color: #dac62f;
+  background-color: #eecaeb;
 }
 
 .color-mediocre {
-  color: #dac62f;
+  color: #eecaeb;
 }
 
 .background-color-negative {
@@ -522,11 +522,11 @@ template {
 }
 
 .background-color-neutral {
-  background-color: #dac62f;
+  background-color: #eecaeb;
 }
 
 .color-neutral {
-  color: #dac62f;
+  color: #eecaeb;
 }
 
 .background-color-cta {
@@ -795,7 +795,7 @@ h3 {
   --icon-color: #757575;
 }
 
-@keyframes breathe {
+@keyframes breatheweight {
   40% {
     font-variation-settings: "wght" 600;
   }
@@ -806,13 +806,24 @@ h3 {
     font-variation-settings: "wght" 600;
   }
 }
+@keyframes breathebackground {
+  0% {
+    background-color: #eecaeb;
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  80% {
+    background-color: #eecaeb;
+  }
+}
 body {
   cursor: crosshair;
 }
 
 [data-splitting] .char {
-  --delay: calc(-1 * (var(--char-index) + 1) * (6000ms - 6000ms / 6 * 0.1));
-  animation: breathe 6000ms infinite both;
+  --delay: calc(-1ms * (var(--char-index) + 1) * (6000ms - 6000ms / 6 * 0.1));
+  animation: breatheweight 6000ms infinite both;
   animation-delay: var(--delay);
   animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
 }
@@ -944,38 +955,89 @@ abbr[title],
   --weight: 350;
 }
 
+.nav--main, .nav--external, .nav--collateral, .section__content, .section__cta, .page__header, .page-brand, .page-footer, .spacer {
+  background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png");
+  background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
+}
+
 .spacer {
-  background-color: #c7c7c7;
+  background-color: #eecaeb;
+  --delay: 0ms;
+  animation: breathebackground 20000ms infinite both;
+  animation-delay: var(--delay);
+  animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
 }
 .spacer:nth-of-type(1) {
-  grid-area: topvideo;
-  background-color: rgba(255, 255, 255, 0);
+  --delay: calc(-1 * 1 * 20000ms / 24);
 }
 .spacer:nth-of-type(2) {
-  grid-area: rightvideo;
-  background-color: rgba(255, 255, 255, 0);
+  --delay: calc(-1 * 2 * 20000ms / 24);
 }
 .spacer:nth-of-type(3) {
-  grid-area: bottomvideo;
-  background-color: rgba(255, 255, 255, 0);
+  --delay: calc(-1 * 3 * 20000ms / 24);
 }
 .spacer:nth-of-type(4) {
-  grid-area: top;
+  --delay: calc(-1 * 4 * 20000ms / 24);
 }
 .spacer:nth-of-type(5) {
-  grid-area: right;
+  --delay: calc(-1 * 5 * 20000ms / 24);
 }
 .spacer:nth-of-type(6) {
-  grid-area: left;
+  --delay: calc(-1 * 6 * 20000ms / 24);
 }
 .spacer:nth-of-type(7) {
-  grid-area: bottom;
+  --delay: calc(-1 * 7 * 20000ms / 24);
 }
 .spacer:nth-of-type(8) {
-  grid-area: white;
-  background-color: white;
-  mix-blend-mode: unset;
-  opacity: 1;
+  --delay: calc(-1 * 8 * 20000ms / 24);
+}
+.spacer:nth-of-type(9) {
+  --delay: calc(-1 * 9 * 20000ms / 24);
+}
+.spacer:nth-of-type(10) {
+  --delay: calc(-1 * 10 * 20000ms / 24);
+}
+.spacer:nth-of-type(11) {
+  --delay: calc(-1 * 11 * 20000ms / 24);
+}
+.spacer:nth-of-type(12) {
+  --delay: calc(-1 * 12 * 20000ms / 24);
+}
+.spacer:nth-of-type(13) {
+  --delay: calc(-1 * 13 * 20000ms / 24);
+}
+.spacer:nth-of-type(14) {
+  --delay: calc(-1 * 14 * 20000ms / 24);
+}
+.spacer:nth-of-type(15) {
+  --delay: calc(-1 * 15 * 20000ms / 24);
+}
+.spacer:nth-of-type(16) {
+  --delay: calc(-1 * 16 * 20000ms / 24);
+}
+.spacer:nth-of-type(17) {
+  --delay: calc(-1 * 17 * 20000ms / 24);
+}
+.spacer:nth-of-type(18) {
+  --delay: calc(-1 * 18 * 20000ms / 24);
+}
+.spacer:nth-of-type(19) {
+  --delay: calc(-1 * 19 * 20000ms / 24);
+}
+.spacer:nth-of-type(20) {
+  --delay: calc(-1 * 20 * 20000ms / 24);
+}
+.spacer:nth-of-type(21) {
+  --delay: calc(-1 * 21 * 20000ms / 24);
+}
+.spacer:nth-of-type(22) {
+  --delay: calc(-1 * 22 * 20000ms / 24);
+}
+.spacer:nth-of-type(23) {
+  --delay: calc(-1 * 23 * 20000ms / 24);
+}
+.spacer:nth-of-type(24) {
+  --delay: calc(-1 * 24 * 20000ms / 24);
 }
 
 @media (min-width: 600px) and (min-height: 299px) {
@@ -2863,12 +2925,12 @@ figure figcaption cite {
 }
 .table--zebra tbody tr:hover th,
 .table--zebra tbody tr:hover td {
-  background-color: #dac62f;
+  background-color: #eecaeb;
   color: var(--brand--dark);
 }
 .table--zebra .is-logged-user th,
 .table--zebra .is-current-user th {
-  background-color: #dac62f;
+  background-color: #eecaeb;
 }
 
 .page__outer {
@@ -2876,9 +2938,10 @@ figure figcaption cite {
 }
 .page__inner {
   display: grid;
+  gap: 1px;
   grid-template-columns: 6vw 1fr 2fr 2fr 1fr 6vw;
-  grid-template-rows: 6vh auto auto auto 6vh;
-  grid-template-areas: "left			top 					top						topvideo	topvideo 	topvideo" "left			nav 					brand					brand			white 		rightvideo" "left			nav 					heading 			heading		white 		rightvideo" "left			bottomvideo		bottomvideo		content 	content		right" "left			bottomvideo 	bottomvideo		footer 		footer		right" "bottom			bottom 				bottom				bottom 		bottom		right";
+  grid-template-rows: 6vh auto auto auto auto 6vh;
+  grid-template-areas: ".			. 						.							.				. 			." ".			main 					brand					brand			cta 		." ".			external 			heading 			heading		. 	." ".			. 						heading 			heading		. 	." ".			collateral						.						content 	content	." ".			.					.								. 				.				.";
   min-block-size: 100vh;
 }
 .page__header {
@@ -2888,18 +2951,17 @@ figure figcaption cite {
 }
 .page__heading {
   text-align: start;
-  max-width: 5em;
-  margin: 0 auto;
+  max-width: 7em;
   font-size: min(9vw, 7.5rem);
-  line-height: 0.8;
+  line-height: 0.85;
 }
 .page-brand {
   grid-area: brand;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
   padding: 1rem;
+  display: grid;
+  align-content: center;
 }
 .page-brand__logo .logogram {
   color: var(--brand--color);
@@ -2910,7 +2972,7 @@ figure figcaption cite {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition-property: font-size;
-  text-align: center;
+  margin: 0;
 }
 .page-main {
   display: contents;
@@ -3042,7 +3104,7 @@ figure figcaption cite {
   margin: 0;
   padding: 0;
   background-color: unset;
-  font-size: min(4vw, 0.875rem);
+  padding: 0.5rem;
 }
 [class*=nav__list] li {
   background-color: inherit;
@@ -3077,22 +3139,33 @@ figure figcaption cite {
   color: white;
   --weight: 600;
   pointer-events: none;
+  background-color: #eecaeb;
+  border-radius: 0.25rem;
 }
 [class*=nav__item] a {
-  padding: 0.5ch 1ch;
+  padding: 0.25rem 0.5rem;
 }
 
-.nav--document {
-  grid-area: nav;
+.nav--main {
+  grid-area: main;
   background-color: white;
-  padding: 2rem;
 }
-.nav--collateral .nav__list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: start;
-  padding: 1rem 2rem;
+.nav--external {
+  grid-area: external;
+  background-color: white;
+}
+.nav--external a:before {
+  content: "↗";
+}
+.nav--collateral {
+  grid-area: collateral;
+  background-color: white;
   font-size: min(3vw, 0.625rem);
+}
+
+[class^=nav--] {
+  display: grid;
+  align-content: end;
 }
 
 .background {
@@ -3119,7 +3192,14 @@ figure figcaption cite {
 .section__content {
   grid-area: content;
   background-color: white;
-  padding: 0 2rem;
+  padding: 1rem;
+}
+.section__cta {
+  grid-area: cta;
+  background-color: white;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
 }
 
 .text {
@@ -3408,7 +3488,7 @@ figure figcaption cite {
   color: #da2f99;
 }
 .tml .good {
-  color: #dac62f;
+  color: #eecaeb;
 }
 .tml .strong {
   color: #2fda71;
@@ -3417,7 +3497,7 @@ figure figcaption cite {
 [class^=ad--] {
   height: calc(var(--adHeight));
   margin: auto;
-  background-color: #dac62f;
+  background-color: #eecaeb;
 }
 
 [class*=ad--mobile] {

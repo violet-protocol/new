@@ -23,16 +23,17 @@
 		color: $white;
 		@include semibold--inverse;
 		pointer-events: none;
+		background-color: $accent--color;
+		border-radius: $radius;
 	}
 	a {
-		padding: 0.5ch 1ch;
+		padding: $u4 $u2;
 	}
 }
 
 [class*="nav__list"] {
 	@include list--reset;
-	font-size: $fs-1;
-
+	padding: $u2;
 	// @include flex;
 	// --flex-gap: #{$u2};
 	// text-align: end;
@@ -54,11 +55,10 @@
 	// 		pointer-events: none;
 	// 	}
 	// }
-	&--document {
+	&--main {
 		@extend %grid;
-		grid-area: nav;
+		grid-area: main;
 		background-color: $white;
-		padding: $u * 2;
 		// position: fixed;
 		// z-index: z(fixed);
 		// inset-block-start: calc(20vh - 2em);
@@ -73,13 +73,26 @@
 		// 	flex-flow: row wrap;
 		// }
 	}
-	&--collateral {
-		.nav__list {
-			display: flex;
-			flex-flow: row wrap;
-			justify-content: start;
-			padding: $u $u * 2;
-			font-size: $fs-3;
+	&--external {
+		@extend %grid;
+		grid-area: external;
+		background-color: $white;
+		a {
+			&:before {
+				content: "↗";
+				//				font-family: monospace;
+			}
 		}
 	}
+	&--collateral {
+		@extend %grid;
+		grid-area: collateral;
+		background-color: $white;
+		font-size: $fs-3;
+	}
+}
+
+[class^="nav--"] {
+	display: grid;
+	align-content: end;
 }

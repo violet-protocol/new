@@ -6,23 +6,49 @@ html(lang='en' class='no-js')
 		include svg/svg.html
 		.page__outer
 			figure.background
-				video(src="image/background/0.mp4" autoplay loop muted)
+				//img(src="image/background/9.jpg")
+				video(src="image/background/1.mp4" autoplay loop muted)
+
 			.page__inner
-				b.spacer
-				b.spacer
-				b.spacer
-				b.spacer
-				b.spacer
-				b.spacer
-				b.spacer
-				b.spacer
 				include include/_page-brand.pug 
-				include include/_nav--document.pug 
+				include include/_nav--main.pug 
+				include include/_nav--external.pug 
+				include include/_nav--collateral.pug  
 				main.page-main 
-					header.page__header  
-						h2.page__heading We Evolve Trust
+					header.page__header   
+						h2.page__heading We Evolve Trust in Web3
 					section.section__content
 						p Violet is a new identity protocol built on Ethereum to connect on-chain with verified off-chain identities and serve as an orchestration platform for authentication and authorization against other protocols and applications.
-						a.cta(href="#") Learn more
-				include include/_page-footer.pug  
+						a.cta(href="https://violet-co.gitbook.io/") Learn more
+					section.section__cta
+						a.cta(href="https://violet-co.gitbook.io/") Documentation
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer 
+				b.spacer
 
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+
+				b.spacer
+				b.spacer
+				b.spacer
+				b.spacer
+	script.
+		Splitting();
