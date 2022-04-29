@@ -25,12 +25,14 @@
 		pointer-events: none;
 	}
 	a {
-		padding: 0.5ch 1ch 0 0;
+		padding: 0.5ch 1ch;
 	}
 }
 
 [class*="nav__list"] {
 	@include list--reset;
+	font-size: $fs-1;
+
 	// @include flex;
 	// --flex-gap: #{$u2};
 	// text-align: end;
@@ -45,13 +47,13 @@
 }
 
 .nav {
-	&--main {
-		font-size: $fs3;
-		padding: $u;
-		.nav__item {
-			pointer-events: none;
-		}
-	}
+	// &--main {
+	// 	font-size: $fs3;
+	// 	padding: $u;
+	// 	.nav__item {
+	// 		pointer-events: none;
+	// 	}
+	// }
 	&--document {
 		@extend %grid;
 		grid-area: nav;
@@ -77,7 +79,7 @@
 			flex-flow: row wrap;
 			justify-content: start;
 			padding: $u $u * 2;
-			font-size: $fs-2;
+			font-size: $fs-3;
 		}
 	}
 }

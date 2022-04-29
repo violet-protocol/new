@@ -3042,6 +3042,7 @@ figure figcaption cite {
   margin: 0;
   padding: 0;
   background-color: unset;
+  font-size: min(4vw, 0.875rem);
 }
 [class*=nav__list] li {
   background-color: inherit;
@@ -3078,16 +3079,9 @@ figure figcaption cite {
   pointer-events: none;
 }
 [class*=nav__item] a {
-  padding: 0.5ch 1ch 0 0;
+  padding: 0.5ch 1ch;
 }
 
-.nav--main {
-  font-size: min(5vw, 1.25rem);
-  padding: 1rem;
-}
-.nav--main .nav__item {
-  pointer-events: none;
-}
 .nav--document {
   grid-area: nav;
   background-color: white;
@@ -3098,7 +3092,7 @@ figure figcaption cite {
   flex-flow: row wrap;
   justify-content: start;
   padding: 1rem 2rem;
-  font-size: min(3vw, 0.75rem);
+  font-size: min(3vw, 0.625rem);
 }
 
 .background {
