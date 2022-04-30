@@ -18,19 +18,19 @@ $logo-weight: 600;
 
 @keyframes breathebackground {
 	0% {
-		background-color: $white;
+		background-color: fade-out($white, 0.5);
 	}
 	25% {
-		background-color: fade-out($accent--color, 0.5);
+		background-color: fade-out($accent--color, 0.2);
 	}
 	50% {
-		background-color: fade-out($accent--color, 1);
+		background-color: fade-out($accent--color, 0.8);
 	}
 	75% {
-		background-color: fade-out($accent--color, 0.5);
+		background-color: fade-out($accent--color, 0.2);
 	}
 	80% {
-		background-color: $white;
+		background-color: fade-out($white, 0.5);
 	}
 }
 
@@ -41,7 +41,7 @@ body {
 	.char {
 		$countchar: 6;
 		$duration: 6000ms;
-		--delay: calc(-1ms * (var(--char-index) + 1) * (#{$duration} / #{$countchar}));
+		--delay: calc(-1 * (var(--char-index) + 1) * (#{$duration} - (#{$duration} / #{$countchar}) * 0.1));
 
 		animation: breatheweight $duration infinite both;
 		animation-delay: var(--delay);
@@ -177,7 +177,7 @@ abbr[title],
 
 .spacer {
 	@extend %grid;
-	background-color: $white;
+	background-color: fade-out($white, 0.5);
 	//mix-blend-mode: luminosity;
 	--delayr: 0ms;
 	$durationr: 20000ms;

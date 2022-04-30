@@ -33,7 +33,7 @@
 
 [class*="nav__list"] {
 	@include list--reset;
-	padding: $u2;
+	//padding: $u2;
 	// @include flex;
 	// --flex-gap: #{$u2};
 	// text-align: end;
@@ -45,6 +45,11 @@
 [class*="nav__item"] {
 	@include nav__item;
 	//	@include uppercase;
+}
+[class^="nav--"] {
+	display: grid;
+	align-content: end;
+	padding: $u;
 }
 
 .nav {
@@ -59,6 +64,7 @@
 		@extend %grid;
 		grid-area: main;
 		background-color: $white;
+
 		// position: fixed;
 		// z-index: z(fixed);
 		// inset-block-start: calc(20vh - 2em);
@@ -80,7 +86,6 @@
 		a {
 			&:before {
 				content: "↗";
-				//				font-family: monospace;
 			}
 		}
 	}
@@ -90,9 +95,4 @@
 		background-color: $white;
 		font-size: $fs-3;
 	}
-}
-
-[class^="nav--"] {
-	display: grid;
-	align-content: end;
 }

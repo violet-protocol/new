@@ -28,9 +28,9 @@
 		grid-template-areas:
 			".			. 						.							.				. 			."
 			".			main 					brand					brand			cta 		."
-			".			external 			heading 			heading		. 	."
-			".			. 						heading 			heading		. 	."
-			".			collateral						.						content 	content	."
+			".			external  			heading 			heading		heading 	."
+			".			external 						heading 			heading		heading 	."
+			".			external						collateral						content 	content	."
 			".			.					.								. 				.				.";
 
 		min-block-size: 100vh;
@@ -71,7 +71,7 @@
 		display: grid;
 		padding: $u;
 		display: grid;
-		align-content: center;
+		align-content: end;
 		&__logo {
 			//	opacity: 0.8;
 
