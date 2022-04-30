@@ -23,15 +23,28 @@
 		gap: 1px;
 		$page-border-h: 6vw;
 		$page-border-v: 6vh;
-		grid-template-columns: $page-border-h 1fr 2fr 2fr 1fr $page-border-h;
-		grid-template-rows: $page-border-v auto auto auto auto $page-border-v;
+		grid-template-columns: $u 8fr 4fr $u;
+		grid-template-rows: repeat(6, aut0);
 		grid-template-areas:
-			".			. 						.							.				. 			."
-			".			main 					brand					brand			cta 		."
-			".			external  			heading 			heading		heading 	."
-			".			external 						heading 			heading		heading 	."
-			".			external						collateral						content 	content	."
-			".			.					.								. 				.				.";
+			". . . ."
+			". brand main ."
+			". external cta ."
+			". heading heading ."
+			". content content . "
+			". collateral collateral ."
+			". . . .";
+
+		@include mq(medium) {
+			grid-template-columns: $page-border-h 1fr 2fr 3fr 2fr $page-border-h;
+			grid-template-rows: $page-border-v auto auto auto auto $page-border-v;
+			grid-template-areas:
+				".			. 						.							.				. 			."
+				".			main 					brand					brand			cta 		."
+				".			collateral  			heading 			heading		heading 	."
+				".			collateral 						heading 			heading		heading 	."
+				".			external						external						content 	content	."
+				".			.					.								. 				.				.";
+		}
 
 		min-block-size: 100vh;
 	}
@@ -48,6 +61,7 @@
 		font-size: $fs7;
 		color: $night;
 		line-height: 0.85;
+		margin: 0;
 	}
 	&-header {
 		//		display: contents;

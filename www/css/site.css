@@ -1045,6 +1045,14 @@ abbr[title],
 .spacer:nth-of-type(24) {
   --delayr: calc(-1 * 24 * 20000ms / 24* 0.8);
 }
+.spacer:nth-last-of-type(1), .spacer:nth-last-of-type(2) {
+  display: none;
+}
+@media (min-width: 600px) and (min-height: 299px) {
+  .spacer:nth-last-of-type(1), .spacer:nth-last-of-type(2) {
+    display: block;
+  }
+}
 
 @media (min-width: 600px) and (min-height: 299px) {
   .left,
@@ -2949,10 +2957,17 @@ figure figcaption cite {
 .page__inner {
   display: grid;
   gap: 1px;
-  grid-template-columns: 6vw 1fr 2fr 2fr 1fr 6vw;
-  grid-template-rows: 6vh auto auto auto auto 6vh;
-  grid-template-areas: ".			. 						.							.				. 			." ".			main 					brand					brand			cta 		." ".			external  			heading 			heading		heading 	." ".			external 						heading 			heading		heading 	." ".			external						collateral						content 	content	." ".			.					.								. 				.				.";
+  grid-template-columns: 1rem 8fr 4fr 1rem;
+  grid-template-rows: repeat(6, aut0);
+  grid-template-areas: ". . . ." ". brand main ." ". external cta ." ". heading heading ." ". content content . " ". collateral collateral ." ". . . .";
   min-block-size: 100vh;
+}
+@media (min-width: 600px) and (min-height: 299px) {
+  .page__inner {
+    grid-template-columns: 6vw 1fr 2fr 3fr 2fr 6vw;
+    grid-template-rows: 6vh auto auto auto auto 6vh;
+    grid-template-areas: ".			. 						.							.				. 			." ".			main 					brand					brand			cta 		." ".			collateral  			heading 			heading		heading 	." ".			collateral 						heading 			heading		heading 	." ".			external						external						content 	content	." ".			.					.								. 				.				.";
+  }
 }
 .page__header {
   grid-area: heading;
@@ -2966,6 +2981,7 @@ figure figcaption cite {
   font-size: min(9vw, 7.5rem);
   color: #2e2e2e;
   line-height: 0.85;
+  margin: 0;
 }
 .page-brand {
   mix-blend-mode: luminosity;

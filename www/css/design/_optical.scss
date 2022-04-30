@@ -192,4 +192,11 @@ abbr[title],
 			--delayr: calc(-1 * #{$j} * #{$durationr} / #{$spacer}* 0.8);
 		}
 	}
+	&:nth-last-of-type(1),
+	&:nth-last-of-type(2) {
+		display: none;
+		@include mq(medium) {
+			display: block;
+		}
+	}
 }
