@@ -1045,14 +1045,6 @@ abbr[title],
 .spacer:nth-of-type(24) {
   --delayr: calc(-1 * 24 * 20000ms / 24* 0.8);
 }
-.spacer:nth-last-of-type(1), .spacer:nth-last-of-type(2) {
-  display: none;
-}
-@media (min-width: 600px) and (min-height: 299px) {
-  .spacer:nth-last-of-type(1), .spacer:nth-last-of-type(2) {
-    display: block;
-  }
-}
 
 @media (min-width: 600px) and (min-height: 299px) {
   .left,
@@ -2965,8 +2957,8 @@ figure figcaption cite {
 @media (min-width: 600px) and (min-height: 299px) {
   .page__inner {
     grid-template-columns: 6vw 1fr 2fr 3fr 2fr 6vw;
-    grid-template-rows: 6vh auto auto auto auto 6vh;
-    grid-template-areas: ".			. 						.							.				. 			." ".			main 					brand					brand			cta 		." ".			collateral  			heading 			heading		heading 	." ".			collateral 						heading 			heading		heading 	." ".			external						external						content 	content	." ".			.					.								. 				.				.";
+    grid-template-rows: 6vh auto auto auto 6vh;
+    grid-template-areas: ".			. 						.							.				. 			." ".			main 					brand					brand			cta 		." ".			collateral  			heading 			heading		heading 	." ".			external						external						content 	content	." ".			.					.								. 				.				.";
   }
 }
 .page__header {

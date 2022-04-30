@@ -36,12 +36,11 @@
 
 		@include mq(medium) {
 			grid-template-columns: $page-border-h 1fr 2fr 3fr 2fr $page-border-h;
-			grid-template-rows: $page-border-v auto auto auto auto $page-border-v;
+			grid-template-rows: $page-border-v auto auto auto $page-border-v;
 			grid-template-areas:
 				".			. 						.							.				. 			."
 				".			main 					brand					brand			cta 		."
 				".			collateral  			heading 			heading		heading 	."
-				".			collateral 						heading 			heading		heading 	."
 				".			external						external						content 	content	."
 				".			.					.								. 				.				.";
 		}
