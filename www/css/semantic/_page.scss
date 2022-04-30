@@ -40,11 +40,13 @@
 		grid-area: heading;
 		background-color: $white;
 		padding: $u;
+		mix-blend-mode: luminosity;
 	}
 	&__heading {
 		text-align: start;
 		max-width: 7em;
 		font-size: $fs7;
+		color: $night;
 		line-height: 0.85;
 	}
 	&-header {

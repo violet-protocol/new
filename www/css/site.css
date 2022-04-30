@@ -2958,11 +2958,13 @@ figure figcaption cite {
   grid-area: heading;
   background-color: white;
   padding: 1rem;
+  mix-blend-mode: luminosity;
 }
 .page__heading {
   text-align: start;
   max-width: 7em;
   font-size: min(9vw, 7.5rem);
+  color: #2e2e2e;
   line-height: 0.85;
 }
 .page-brand {
