@@ -963,7 +963,7 @@ abbr[title],
 
 .nav--main, .nav--external, .nav--collateral, .section__content, .section__cta, .page__header, .page-brand, .page-footer, .spacer {
   background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png");
-  background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
+  background-position: -6px -6px, calc(100% + 6px) -6px, -6px calc(100% + 6px), calc(100% + 6px) calc(100% + 6px);
 }
 
 .spacer {

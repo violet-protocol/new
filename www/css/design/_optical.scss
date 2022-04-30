@@ -172,7 +172,9 @@ abbr[title],
 %grid {
 	background-image: url("../image/grid.png"), url("../image/grid.png"), url("../image/grid.png"),
 		url("../image/grid.png");
-	background-position: -8px -8px, calc(100% + 8px) -8px, -8px calc(100% + 8px), calc(100% + 8px) calc(100% + 8px);
+	$g: 6px;
+	background-position: -#{$g} -#{$g}, calc(100% + #{$g}) -#{$g}, -#{$g} calc(100% + #{$g}),
+		calc(100% + #{$g}) calc(100% + #{$g});
 }
 
 .spacer {
