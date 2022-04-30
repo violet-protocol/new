@@ -67,6 +67,8 @@
 		// }
 	}
 	&-brand {
+		mix-blend-mode: luminosity;
+
 		@extend %grid;
 		grid-area: brand;
 		background-color: $white;

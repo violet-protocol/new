@@ -2968,6 +2968,7 @@ figure figcaption cite {
   line-height: 0.85;
 }
 .page-brand {
+  mix-blend-mode: luminosity;
   grid-area: brand;
   background-color: white;
   display: grid;
