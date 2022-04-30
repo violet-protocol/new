@@ -808,13 +808,19 @@ h3 {
 }
 @keyframes breathebackground {
   0% {
-    background-color: #eecaeb;
+    background-color: white;
+  }
+  25% {
+    background-color: rgba(238, 202, 235, 0.5);
   }
   50% {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(238, 202, 235, 0);
+  }
+  75% {
+    background-color: rgba(238, 202, 235, 0.5);
   }
   80% {
-    background-color: #eecaeb;
+    background-color: white;
   }
 }
 body {
@@ -961,83 +967,83 @@ abbr[title],
 }
 
 .spacer {
-  background-color: #eecaeb;
+  background-color: white;
   --delayr: 0ms;
   animation: breathebackground 20000ms infinite both;
   animation-delay: var(--delayr);
   animation-timing-function: cubic-bezier(0.2, 0, 0.6, 1);
 }
 .spacer:nth-of-type(1) {
-  --delayr: calc(-1 * 1 * 20000ms / 24);
+  --delayr: calc(-1 * 1 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(2) {
-  --delayr: calc(-1 * 2 * 20000ms / 24);
+  --delayr: calc(-1 * 2 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(3) {
-  --delayr: calc(-1 * 3 * 20000ms / 24);
+  --delayr: calc(-1 * 3 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(4) {
-  --delayr: calc(-1 * 4 * 20000ms / 24);
+  --delayr: calc(-1 * 4 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(5) {
-  --delayr: calc(-1 * 5 * 20000ms / 24);
+  --delayr: calc(-1 * 5 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(6) {
-  --delayr: calc(-1 * 6 * 20000ms / 24);
+  --delayr: calc(-1 * 6 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(7) {
-  --delayr: calc(-1 * 7 * 20000ms / 24);
+  --delayr: calc(-1 * 7 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(8) {
-  --delayr: calc(-1 * 8 * 20000ms / 24);
+  --delayr: calc(-1 * 8 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(9) {
-  --delayr: calc(-1 * 9 * 20000ms / 24);
+  --delayr: calc(-1 * 9 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(10) {
-  --delayr: calc(-1 * 10 * 20000ms / 24);
+  --delayr: calc(-1 * 10 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(11) {
-  --delayr: calc(-1 * 11 * 20000ms / 24);
+  --delayr: calc(-1 * 11 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(12) {
-  --delayr: calc(-1 * 12 * 20000ms / 24);
+  --delayr: calc(-1 * 12 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(13) {
-  --delayr: calc(-1 * 13 * 20000ms / 24);
+  --delayr: calc(-1 * 13 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(14) {
-  --delayr: calc(-1 * 14 * 20000ms / 24);
+  --delayr: calc(-1 * 14 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(15) {
-  --delayr: calc(-1 * 15 * 20000ms / 24);
+  --delayr: calc(-1 * 15 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(16) {
-  --delayr: calc(-1 * 16 * 20000ms / 24);
+  --delayr: calc(-1 * 16 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(17) {
-  --delayr: calc(-1 * 17 * 20000ms / 24);
+  --delayr: calc(-1 * 17 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(18) {
-  --delayr: calc(-1 * 18 * 20000ms / 24);
+  --delayr: calc(-1 * 18 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(19) {
-  --delayr: calc(-1 * 19 * 20000ms / 24);
+  --delayr: calc(-1 * 19 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(20) {
-  --delayr: calc(-1 * 20 * 20000ms / 24);
+  --delayr: calc(-1 * 20 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(21) {
-  --delayr: calc(-1 * 21 * 20000ms / 24);
+  --delayr: calc(-1 * 21 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(22) {
-  --delayr: calc(-1 * 22 * 20000ms / 24);
+  --delayr: calc(-1 * 22 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(23) {
-  --delayr: calc(-1 * 23 * 20000ms / 24);
+  --delayr: calc(-1 * 23 * 20000ms / 24* 0.8);
 }
 .spacer:nth-of-type(24) {
-  --delayr: calc(-1 * 24 * 20000ms / 24);
+  --delayr: calc(-1 * 24 * 20000ms / 24* 0.8);
 }
 
 @media (min-width: 600px) and (min-height: 299px) {
@@ -1622,6 +1628,7 @@ abbr[title],
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition-property: all;
   cursor: pointer;
   border: none;
   vertical-align: middle;
@@ -1637,6 +1644,7 @@ abbr[title],
   color: white;
 }
 .cta:hover, .cta:visited:hover {
+  color: white;
   --weight: 650;
 }
 .cta:focus, .cta:visited:focus {
@@ -2080,6 +2088,7 @@ button {
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition-property: all;
   cursor: pointer;
   border: none;
   vertical-align: middle;
@@ -2097,6 +2106,7 @@ button:visited {
   color: white;
 }
 button:hover, button:visited:hover {
+  color: white;
   --weight: 650;
 }
 button:focus, button:visited:focus {
@@ -3301,6 +3311,7 @@ figure figcaption cite {
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition-property: all;
   cursor: pointer;
   border: none;
   vertical-align: middle;
@@ -3318,6 +3329,7 @@ figure figcaption cite {
   color: white;
 }
 .wp-block-button__link:hover, .wp-block-button__link:visited:hover {
+  color: white;
   --weight: 650;
 }
 .wp-block-button__link:focus, .wp-block-button__link:visited:focus {
@@ -3406,6 +3418,7 @@ figure figcaption cite {
   transition: all 1s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transition-property: all;
   cursor: pointer;
   border: none;
   vertical-align: middle;
@@ -3421,6 +3434,7 @@ figure figcaption cite {
   color: white;
 }
 .tml-links .tml-register-link a:hover, .tml-links .tml-register-link a:visited:hover {
+  color: white;
   --weight: 650;
 }
 .tml-links .tml-register-link a:focus, .tml-links .tml-register-link a:visited:focus {

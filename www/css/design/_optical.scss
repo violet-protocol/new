@@ -18,13 +18,19 @@ $logo-weight: 600;
 
 @keyframes breathebackground {
 	0% {
-		background-color: $accent--color;
+		background-color: $white;
+	}
+	25% {
+		background-color: fade-out($accent--color, 0.5);
 	}
 	50% {
-		background-color: $transparent;
+		background-color: fade-out($accent--color, 1);
+	}
+	75% {
+		background-color: fade-out($accent--color, 0.5);
 	}
 	80% {
-		background-color: $accent--color;
+		background-color: $white;
 	}
 }
 
@@ -171,7 +177,7 @@ abbr[title],
 
 .spacer {
 	@extend %grid;
-	background-color: $accent--color;
+	background-color: $white;
 	//mix-blend-mode: luminosity;
 	--delayr: 0ms;
 	$durationr: 20000ms;
@@ -181,7 +187,7 @@ abbr[title],
 	$spacer: 24;
 	@for $j from 1 through $spacer {
 		&:nth-of-type(#{$j}) {
-			--delayr: calc(-1 * #{$j} * #{$durationr} / #{$spacer});
+			--delayr: calc(-1 * #{$j} * #{$durationr} / #{$spacer}* 0.8);
 		}
 	}
 }

@@ -13,6 +13,7 @@
 	margin: 0;
 	text-align: inherit;
 	@include transition;
+	transition-property: all;
 	cursor: pointer;
 	border: none;
 	vertical-align: middle;
@@ -29,6 +30,7 @@
 	}
 	&:hover,
 	&:visited:hover {
+		color: $cta-color-hover;
 		@include bold;
 	}
 	&:focus,
