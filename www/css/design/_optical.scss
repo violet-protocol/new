@@ -35,7 +35,8 @@ body {
 	.char {
 		$countchar: 6;
 		$duration: 6000ms;
-		--delay: calc(-1ms * (var(--char-index) + 1) * (#{$duration} - #{$duration} / #{$countchar} * 0.1));
+		--delay: calc(-1ms * (var(--char-index) + 1) * (#{$duration} / #{$countchar}));
+
 		animation: breatheweight $duration infinite both;
 		animation-delay: var(--delay);
 		animation-timing-function: $easing;
@@ -172,15 +173,15 @@ abbr[title],
 	@extend %grid;
 	background-color: $accent--color;
 	//mix-blend-mode: luminosity;
-	--delay: 0ms;
-	$duration: 20000ms;
-	animation: breathebackground $duration infinite both;
-	animation-delay: var(--delay);
+	--delayr: 0ms;
+	$durationr: 20000ms;
+	animation: breathebackground $durationr infinite both;
+	animation-delay: var(--delayr);
 	animation-timing-function: $easing;
 	$spacer: 24;
 	@for $j from 1 through $spacer {
 		&:nth-of-type(#{$j}) {
-			--delay: calc(-1 * #{$j} * #{$duration} / #{$spacer});
+			--delayr: calc(-1 * #{$j} * #{$durationr} / #{$spacer});
 		}
 	}
 }
