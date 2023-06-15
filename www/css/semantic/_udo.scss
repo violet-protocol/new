@@ -58,14 +58,6 @@
 			}
 		}
 	}
-
-	//	@include grid;
-	//	--grid-gap: #{$u};
-	//	padding: $u;
-	//	grid-template-areas:
-	//		"inner"
-	//		"tag";
-	//	grid-template-rows: auto 1fr;
 }
 
 .udo {
@@ -74,17 +66,11 @@
 	position: relative;
 	&__inner {
 		color: $brand--night;
-		* {
-			//	color: inherit;
-		}
 		grid-area: inner;
 		@include grid;
 		overflow: hidden;
 		align-content: start;
 		--grid-gap: #{$u};
-		//	> *:not(:last-child) {
-		//		margin-bottom: $u;
-		//	}
 		padding: 0 0 $u2 0;
 		grid-template-areas:
 			"figure figure"
@@ -111,18 +97,12 @@
 		figcaption {
 			line-height: $line-height;
 		}
-		//max-height: 100vh * $phi-major;
 		img {
 			transform-origin: center top;
 			object-fit: cover;
 			object-position: center min(#{$phi-minor * 80%});
-
-			// .article__aside & {
-			// 	max-height: none;
-			// }
 			padding: 0;
 			margin: 0;
-			//		object-position: center (100% * $phi-minor);
 			width: 100%;
 			@include transition;
 			transition-property: transform filter;
@@ -136,26 +116,9 @@
 			object-position: center;
 		}
 	}
-	&__download {
-		//		@include cta;
-		//		font-size: $fs-2;
-		//		justify-self: start;
-		//		&.udo__download.udo__download[href$="pdf"]:after {
-		//			background-image: url("../image/icon/icon--pdf.svg");
-		//		}
-	}
-	&__time {
-		//		grid-area: time;
-	}
-	&__location {
-		//		grid-area: location;
-	}
 	&__kicker {
-		//		grid-area: kicker;
 		display: block;
 		@extend h6;
-		//		margin: 0;
-		//		@include transition();
 	}
 	&__heading {
 		grid-area: heading;
@@ -174,7 +137,6 @@
 		transition-property: color;
 	}
 	&__tag {
-		//grid-area: tag;
 		position: absolute;
 		top: $u4;
 		left: $u4;
